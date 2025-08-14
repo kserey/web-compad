@@ -87,7 +87,7 @@
     <h2 class="text-center mb-5">Casos de Éxito</h2>
 
     <!-- Carrusel Bootstrap -->
-    <div id="casesCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="casesCarousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
       <div class="carousel-inner" id="cases-container">
         <!-- Aquí se insertan dinámicamente las cards -->
       </div>
@@ -107,13 +107,24 @@
 <section id="partners" class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="mb-5">Partners</h2>
-    <div class="row g-4">
-      <div class="col-md-3"><img src="images/purestorage.png" class="img-fluid" alt="PureStorage"></div>
-      <div class="col-md-3"><img src="images/hpe.png" class="img-fluid" alt="HPE"></div>
-      <!-- Más logos -->
+
+    <div id="partnersCarousel" class="carousel slide custom-carousel">
+      <div class="carousel-inner" id="partners-container">
+        </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
   </div>
 </section>
+
+
 
 <!-- Contacto -->
 <section id="contact" class="py-5">
@@ -151,7 +162,7 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JS -->
-<script src="JS/script.js"></script>
-<script src="JS/casos.js"></script>
+<script type="module" src="JS/script.js"></script>
+
 </body>
 </html>

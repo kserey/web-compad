@@ -1,101 +1,163 @@
 :root {
-    --primary-color: #E94925;
+  --primary-color: #E94925;
 }
 
 body {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .hero {
-    background: var(--primary-color) url('images/hero-bg.jpg') center/cover no-repeat;
-    min-height: 90vh;
-    padding-top: 70px;
+  background: var(--primary-color) url('images/hero-bg.jpg') center/cover no-repeat;
+  min-height: 90vh;
+  padding-top: 70px;
 }
 
 .nav-link:hover {
-    color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border: none;
+  background-color: var(--primary-color);
+  border: none;
 }
 
 .btn-primary:hover {
-    background-color: #c53c1f;
+  background-color: #c53c1f;
 }
 
 footer {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
-/* ===== Casos ===== */
-#cases .card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
+/* ============================================= */
+/* ===== COMPONENTES GENERALES REUTILIZABLES ===== */
+/* ============================================= */
+
+/* ----- Componente: Tarjeta Personalizada ----- */
+.custom-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  /* Lógica para igualar altura */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegura que la tarjeta ocupe toda la altura de su columna */
 }
 
-#cases .card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--primary-color), #ff6a45);
-    background-size: 100% 200%;
-    transition: background-position 0.5s ease;
+.custom-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), #ff6a45);
+  background-size: 100% 200%;
+  transition: background-position 0.5s ease;
 }
 
-#cases .card:hover::before {
-    background-position: 0 100%;
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-#cases .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.custom-card:hover::before {
+  background-position: 0 100%;
 }
 
-#cases .card-img-top {
-    height: 200px;
-    object-fit: cover;
+.custom-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
 
-#cases .card-body {
-    padding: 1.5rem;
+.custom-card .card-body {
+  padding: 1.5rem;
+  /* Lógica para igualar altura: el cuerpo crece para ocupar el espacio sobrante */
+  flex-grow: 1;
 }
 
-#cases .card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.25rem;
+.custom-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
 }
 
-#cases .card-subtitle {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #6c757d;
-    margin-bottom: 0.75rem;
+.custom-card .card-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
 }
 
-#cases .card-text {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #444;
+.custom-card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
 }
 
-#cases .carousel-item .card {
-    height: 100%;             
-    display: flex;
-    flex-direction: column;   
+/* ----- Componente: Carrusel Personalizado ----- */
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 1.2rem;
+  background-size: 50%;
 }
 
-#cases .carousel-item .card-body {
-    flex: 1;               
-    display: flex;
-    flex-direction: column;
+/* Oculta las flechas si solo hay un slide */
+.custom-carousel.controls-hidden .carousel-control-prev,
+.custom-carousel.controls-hidden .carousel-control-next {
+  display: none;
+}
+
+
+/* =============================================== */
+/* ===== ESTILOS ESPECÍFICOS DE CADA SECCIÓN ===== */
+/* =============================================== */
+
+/* ----- Sección: Partners ----- */
+#partnersCarousel .partner-link {
+  padding: 0 1rem;
+  display: block;
+}
+
+#partnersCarousel .partner-logo {
+  height: 150px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+#partnersCarousel .partner-link:hover .partner-logo {
+  transform: scale(1.1);
+}
+
+/* Espacio para que las flechas no pisen los logos (esto es específico de este carrusel) */
+#partnersCarousel .carousel-item {
+  padding: 0 5rem;
+}
+
+/* Responsive de la sección Partners */
+@media (max-width: 992px) {
+  #partnersCarousel .partner-logo {
+    height: 120px;
+  }
+  #partnersCarousel .carousel-item {
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #partnersCarousel .partner-logo {
+    height: 80px;
+  }
+  #partnersCarousel .partner-link {
+    padding: 0 0.5rem;
+  }
+  #partnersCarousel .carousel-item {
+    padding: 0 2.5rem;
+  }
 }
