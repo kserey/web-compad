@@ -1,15 +1,31 @@
 :root {
   --primary-color: #E94925;
+  --accent-color: #FF6A45;
 }
+
+.text-accent { color: var(--accent-color) !important; }
 
 body {
   scroll-behavior: smooth;
 }
 
 .hero {
-  background: var(--primary-color) url('images/hero-bg.jpg') center/cover no-repeat;
+  position: relative;
+  background: var(--primary-color) url('../IMG/hero-bg.jpg') center/cover no-repeat;
   min-height: 90vh;
   padding-top: 70px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* oscurece */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .nav-link:hover {
@@ -23,6 +39,20 @@ body {
 
 .btn-primary:hover {
   background-color: #c53c1f;
+}
+
+
+#about-us h2 {
+  font-size: 2rem;
+}
+
+#about-us i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#about-us .p-4:hover i {
+  transform: scale(1.15);
+  color: #0d6efd;
 }
 
 footer {
@@ -40,10 +70,10 @@ footer {
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-  /* Lógica para igualar altura */
   display: flex;
   flex-direction: column;
-  height: 100%; /* Asegura que la tarjeta ocupe toda la altura de su columna */
+  height: 100%;
+  will-change: transform, box-shadow;
 }
 
 .custom-card::before {
