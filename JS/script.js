@@ -1,17 +1,5 @@
 import { crearCarrusel } from './carrusel-generator.js';
 
-// --- LÓGICA GENERAL DE LA PÁGINA (Scroll Suave) ---
-document.querySelectorAll('a.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        if (this.hash !== '') {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
 
 // --- INICIALIZACIÓN DEL CARRUSEL DE CASOS DE ÉXITO ---
 const casesData = [
