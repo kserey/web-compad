@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compad - Soluciones IT</title>
+    <link rel="icon" type="image/png" href="COMPAD.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="IMG/COMPAD.png" alt="Compad" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cases">Casos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header id="home" class="hero d-flex align-items-center">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold">Optimizamos tus procesos con soluciones IT a medida</h1>
+    <p>Más de 10 años ayudando a empresas a crecer con tecnología</p>
+    <a href="#contact" class="btn btn-light btn-lg mt-3">Contáctanos</a>
+  </div>
+</header>
+
+<!-- Nosotros -->
+<section id="about" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Quiénes Somos</h2>
+    <p class="lead">En Compad combinamos experiencia técnica, dinamismo y flexibilidad para ser el aliado estratégico de tu empresa en el mundo digital.</p>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Nuestros Servicios</h2>
+    <div class="row g-4">
+      <div class="col-md-3 text-center">
+        <i class="bi bi-gear-fill display-4 text-primary"></i>
+        <h5 class="mt-3">Consultoría IT</h5>
+        <p>Asesoría y apoyo en proyectos y procesos IT.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <i class="bi bi-shield-lock-fill display-4 text-primary"></i>
+        <h5 class="mt-3">Ciberseguridad</h5>
+        <p>Protección de infraestructura y datos con enfoque Blue Team.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <i class="bi bi-recycle display-4 text-primary"></i>
+        <h5 class="mt-3">Destrucción de Medios</h5>
+        <p>Degausser y eliminación certificada de medios físicos.</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <i class="bi bi-laptop display-4 text-primary"></i>
+        <h5 class="mt-3">Venta de Productos</h5>
+        <p>Distribución y venta de equipos IT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Casos -->
+<section id="cases" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Casos de Éxito</h2>
+
+    <!-- Carrusel Bootstrap -->
+    <div id="casesCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" id="cases-container">
+        <!-- Aquí se insertan dinámicamente las cards -->
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#casesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#casesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section id="partners" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Partners</h2>
+    <div class="row g-4">
+      <div class="col-md-3"><img src="images/purestorage.png" class="img-fluid" alt="PureStorage"></div>
+      <div class="col-md-3"><img src="images/hpe.png" class="img-fluid" alt="HPE"></div>
+      <!-- Más logos -->
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contáctanos</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="https://formsubmit.co/TU_CORREO@compad-it.cl" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+          <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Correo" required>
+          </div>
+          <div class="mb-3">
+            <input type="tel" name="phone" class="form-control" placeholder="Teléfono">
+          </div>
+          <div class="mb-3">
+            <textarea name="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-3 text-center">
+  <p class="mb-0">© 2025 Compad. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="JS/script.js"></script>
+<script src="JS/casos.js"></script>
+</body>
+</html>
