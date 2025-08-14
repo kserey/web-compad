@@ -13,33 +13,6 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
 });
 
 
-// --- INICIALIZACIÓN DEL CARRUSEL DE PARTNERS ---
-const partnersData = [
-  { nombre: "PureStorage", logo: "../img/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
-  { nombre: "HPE", logo: "../img/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
-  { nombre: "Recycla", logo: "../img/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
-  { nombre: "WatchGuard", logo: "../img/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
-];
-
-function renderPartnerHTML(partner) {
-  return `
-    <div class="col-3 text-center">
-      <a href="${partner.url}" target="_blank" class="partner-link">
-        <img src="${partner.logo}" alt="${partner.alt}" class="partner-logo">
-      </a>
-    </div>
-  `;
-}
-
-crearCarrusel({
-  data: partnersData,
-  carouselId: 'partnersCarousel',
-  containerId: 'partners-container',
-  itemsPerSlide: 4,
-  renderItemHTML: renderPartnerHTML
-});
-
-
 // --- INICIALIZACIÓN DEL CARRUSEL DE CASOS DE ÉXITO ---
 const casesData = [
     {
@@ -86,4 +59,30 @@ crearCarrusel({
   containerId: 'cases-container',
   itemsPerSlide: 3,
   renderItemHTML: renderCaseHTML
+});
+
+// --- INICIALIZACIÓN DEL CARRUSEL DE PARTNERS ---
+const partnersData = [
+  { nombre: "PureStorage", logo: "IMG/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
+  { nombre: "HPE", logo: "IMG/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
+  { nombre: "Recycla", logo: "IMG/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
+  { nombre: "WatchGuard", logo: "IMG/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
+];
+
+function renderPartnerHTML(partner) {
+  return `
+    <div class="col-3 text-center">
+      <a href="${partner.url}" target="_blank" class="partner-link">
+        <img src="${partner.logo}" alt="${partner.alt}" class="partner-logo">
+      </a>
+    </div>
+  `;
+}
+
+crearCarrusel({
+  data: partnersData,
+  carouselId: 'partnersCarousel',
+  containerId: 'partners-container',
+  itemsPerSlide: 4,
+  renderItemHTML: renderPartnerHTML
 });
