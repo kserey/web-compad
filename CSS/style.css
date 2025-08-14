@@ -1,3 +1,7 @@
+html {
+  scroll-padding-top: 50px;
+}
+
 :root {
   --primary-color: #E94925;
   --accent-color: #FF6A45;
@@ -11,7 +15,7 @@ body {
 
 .hero {
   position: relative;
-  background: var(--primary-color) url('../IMG/hero-bg.jpg') center/cover no-repeat;
+  background: var(--primary-color) url('../IMG/hero-bg.png') center/cover no-repeat;
   min-height: 90vh;
   padding-top: 70px;
 }
