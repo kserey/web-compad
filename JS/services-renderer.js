@@ -28,11 +28,17 @@ export function renderServicesTabs(services) {
       descripcionHTML = `<p class="text-muted">${descripcionData}</p>`;
     }
 
-    // --- Lógica de la imagen de proceso (para Destrucción de Medios) ---
-    const imagenProcesoHTML = service.contenido.imagenProceso ? `
-      <div class="text-center my-4">
-        <img src="${service.contenido.imagenProceso}" class="img-fluid rounded-3" alt="Proceso de ${service.titulo}">
-      </div>` : '';
+
+    // --- Lógica para la imagen de proceso (para Destrucción de Medios) ---
+    let imagenProcesoHTML = '';
+    if (service.contenido.imagenProceso) {
+      imagenProcesoHTML = `
+        <div class="text-center my-4">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img-src="${service.contenido.imagenProceso.src}">
+            <img src="${service.contenido.imagenProceso.src}" class="img-fluid rounded-3 shadow-sm service-gallery-img" alt="${service.contenido.imagenProceso.alt}" style="max-width: 300px;">
+          </a>
+        </div>`;
+    }
     
     // --- Lógica para la Galería de Imágenes (para Transformación Digital) ---
     let galeriaHTML = '';
@@ -40,7 +46,7 @@ export function renderServicesTabs(services) {
       const imagenes = service.contenido.imagenesPanel.map(img => `
         <div class="col-4">
           <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img-src="${img.src}">
-            <img src="${img.src}" class="img-fluid rounded-3 shadow-sm service-gallery-img" alt="${img.alt}">
+            <img src="${img.src}" class="img-fluid rounded-3 service-gallery-img" alt="${img.alt}">
           </a>
         </div>
       `).join('');

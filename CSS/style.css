@@ -80,18 +80,23 @@ body {
 
 /* ----- Estilos para Galería de Servicios ----- */
 .service-gallery-img {
+  background-color: transparent;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; 
 }
 
 .service-gallery-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 #imageModal .modal-content {
   background: transparent;
   border: none;
+}
+
+#imageModal .modal-body img {
+  border-radius: 10px;
 }
 
 footer {

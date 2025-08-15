@@ -63,9 +63,9 @@ export const servicesData = [
         final: ', entregando trazabilidad, control y visibilidad en tiempo real a todos los involucrados.'
       },
       imagenesPanel: [
-        { src: 'IMG/edp-dashboard.png', alt: 'Dashboard de Estados de Pago' },
-        { src: 'IMG/edp-graficos.png', alt: 'Gráficos de rendimiento de EDP' },
-        { src: 'IMG/edp-reportes.png', alt: 'Reportes financieros de la plataforma' }
+        { src: 'IMG/edp-home.png', alt: 'Página de inicio Estados de Pago' },
+        { src: 'IMG/edp-dashboard.png', alt: 'Dashboard general EDP' },
+        { src: 'IMG/edp-contrato.png', alt: 'Reportes contrato individual' }
       ],
       puntosClave: [
         { icono: 'bi-diagram-3-fill', titulo: 'Flujo 100% Digital y Trazable', texto: 'Desde la emisión electrónica del EDP por parte del proveedor hasta la liberación del pago, cada acción queda registrada.' },
@@ -101,18 +101,21 @@ export const servicesData = [
     titulo: 'Destrucción de Medios',
     subtitulo: 'Eliminación segura y certificada de datos.',
     contenido: {
-      tituloPanel: 'Destrucción Segura y Certificada de Medios',
-      descripcion: {
-        inicio: 'Garantizamos la eliminación de datos confidenciales en discos y cintas, ',
-        enfasis: 'con certificación notarial y cumplimiento de la norma PCI',
-        final: ', para tu completa tranquilidad y seguridad en cada etapa del proceso.'
-      },
-      imagenProceso: 'IMG/proceso-destruccion.png',
-      puntosClave: [
-        { icono: 'bi-magnet-fill', titulo: 'Borrado Lógico (Degaussing)', texto: 'Usamos hardware de desmagnetización para destruir datos a nivel magnético, directamente en tu datacenter.' },
-        { icono: 'bi-recycle', titulo: 'Destrucción y Reciclaje Físico', texto: 'Coordinamos la eliminación de partes mecánicas y platos en plantas de reciclaje especializadas.' },
-        { icono: 'bi-patch-check-fill', titulo: 'Certificación Notarial', texto: 'Entregamos un informe detallado y un certificado de reciclaje notariado que respalda todo el proceso.' }
-      ]
+        tituloPanel: 'Destrucción Segura y Certificada de Medios',
+        descripcion: {
+            inicio: 'Garantizamos la eliminación de datos confidenciales en discos y cintas, ',
+            enfasis: 'con certificación notarial y cumplimiento de la norma PCI',
+            final: ', para tu completa tranquilidad y seguridad en cada etapa del proceso.'
+        },
+        imagenProceso: {
+            src: 'IMG/degauss.png',
+            alt: 'Diagrama del proceso de destrucción de medios'
+        },
+        puntosClave: [
+            { icono: 'bi-magnet-fill', titulo: 'Borrado Lógico (Degaussing)', texto: 'Usamos hardware de desmagnetización para destruir datos a nivel magnético.' },
+            { icono: 'bi-recycle', titulo: 'Destrucción y Reciclaje Físico', texto: 'Coordinamos la eliminación de partes mecánicas y platos en plantas de reciclaje especializadas.' },
+            { icono: 'bi-patch-check-fill', titulo: 'Certificación Notarial', texto: 'Entregamos un informe detallado y un certificado de reciclaje notariado que respalda todo el proceso.' }
+        ]
     }
   },
   {
