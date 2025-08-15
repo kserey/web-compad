@@ -4,15 +4,17 @@ export function renderServicesTabs(services) {
   const buttonsContainer = document.getElementById('services-tab-buttons');
   const contentContainer = document.getElementById('services-tab-content');
 
+  const isMobileOrTablet = window.innerWidth < 992;
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 992;
+  const isDesktop = window.innerWidth >= 992;
+
   if (!buttonsContainer || !contentContainer) return;
 
   // Limpiar contenido previo
   buttonsContainer.innerHTML = '';
   contentContainer.innerHTML = '';
 
-  const isMobile = window.innerWidth < 768;
-
-  if (isMobile) {
+  if (isMobileOrTablet) {
     // ===== MODO ACORDEÓN =====
     const accordionId = 'servicesAccordion';
     let accordionHTML = `<div class="accordion" id="${accordionId}">`;
@@ -34,6 +36,7 @@ export function renderServicesTabs(services) {
                     data-bs-target="#collapse-${service.id}" 
                     aria-expanded="${isFirst}" 
                     aria-controls="collapse-${service.id}">
+              <i class="bi bi-lightning-charge-fill me-2 text-accent"></i>
               ${service.titulo}
             </button>
           </h2>

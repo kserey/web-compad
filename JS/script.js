@@ -17,7 +17,7 @@ window.addEventListener('resize', () => {
 /* ===== CASES ===== */
 function renderCaseHTML(caso) {
   return `
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="card shadow-sm custom-card h-100">
         <img src="${caso.imagen}" class="card-img-top" alt="${caso.alt}">
         <div class="card-body d-flex flex-column">
@@ -31,17 +31,25 @@ function renderCaseHTML(caso) {
 }
 
 function setupCasesCarousel() {
-  const itemsPerSlide = window.innerWidth < 768 ? 1 : 3;
+  let itemsPerSlide;
+  if (window.innerWidth < 768) {
+    itemsPerSlide = 1;
+  } else if (window.innerWidth < 992) {
+    itemsPerSlide = 2; // modo tablet
+  } else {
+    itemsPerSlide = 3;
+  }
   crearCarrusel({
     data: casesData,
     carouselId: 'casesCarousel',
     containerId: 'cases-container',
     itemsPerSlide,
     renderItemHTML: renderCaseHTML,
-    autoplay: false, // sin autoplay para lectura tranquila
+    autoplay: false,
     interval: 10000
   });
 }
+
 
 /* ===== PARTNERS ===== */
 function renderPartnerHTML(partner) {

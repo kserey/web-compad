@@ -42,6 +42,59 @@ body {
   color: var(--primary-color);
 }
 
+/* ===== MENÚ HAMBURGUESA ===== */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  background-color: rgba(233, 73, 37, 0.1);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(233, 73, 37, 0.2);
+  transform: scale(1.05);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(233, 73, 37, 0.25);
+}
+
+/* Cambiar color del icono hamburguesa */
+.navbar-light .navbar-toggler-icon {
+  background-image: none; /* Quitamos el SVG default de Bootstrap */
+  width: 1.5em;
+  height: 1.5em;
+  position: relative;
+}
+
+.navbar-light .navbar-toggler-icon::before,
+.navbar-light .navbar-toggler-icon::after,
+.navbar-light .navbar-toggler-icon div {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-toggler-icon div {
+  height: 3px;
+}
+
+/* Animación al abrir */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon div {
+  opacity: 0;
+}
+
 /* ===== BOTONES ===== */
 .btn-primary {
   background-color: var(--primary-color);
@@ -63,7 +116,7 @@ body {
 
 #about-us .p-4:hover i {
   transform: scale(1.15);
-  color: #0d6efd;
+  color: var(--primary-color);
 }
 
 /* ===== SERVICES ===== */
