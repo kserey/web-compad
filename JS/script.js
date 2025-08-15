@@ -1,37 +1,19 @@
+// JS/script.js
+
+// Importaciones de módulos
 import { crearCarrusel } from './carrusel-generator.js';
+import { renderServicesTabs } from './services-renderer.js';
+import { casesData, partnersData, servicesData } from './data.js';
 
+// --- INICIALIZACIÓN DE CARRUSELES ---
 
-// --- INICIALIZACIÓN DEL CARRUSEL DE CASOS DE ÉXITO ---
-const casesData = [
-    {
-        titulo: "Walmart Chile",
-        subtitulo: "Maximizando la eficiencia de tus plataformas virtuales",
-        descripcion: "Ayudamos a Walmart Chile a optimizar sus entornos virtuales para que sus operaciones sean más ágiles y confiables. Nuestro equipo brinda soporte especializado en servidores y plataformas virtuales (VMware, Windows, Linux), realizando diagnósticos precisos, mejoras estratégicas y asistencia continua para asegurar un rendimiento óptimo.",
-        imagen: "IMG/caso-walmart.jpeg",
-        alt: "Caso Walmart"
-    },
-    {
-        titulo: "Banco BCI",
-        subtitulo: "Monitoreo inteligente de sistemas de storage",
-        descripcion: "En Banco BCI potenciamos la confiabilidad de su infraestructura SAN con soporte técnico avanzado y análisis de arquitectura. Generamos reportes detallados de rendimiento y recomendaciones estratégicas para maximizar la eficiencia de sus sistemas de almacenamiento, respaldando operaciones críticas del banco.",
-        imagen: "IMG/caso-bci.jpg",
-        alt: "Caso BCI"
-    },
-    {
-        titulo: "Occidental Chemical Chile",
-        subtitulo: "Destrucción segura y certificada de información",
-        descripcion: "Garantizamos la confidencialidad de la información de Occidental Chemical Chile mediante la destrucción certificada de medios de almacenamiento. Nuestro servicio completo incluye retiro, desarme, degaussing y entrega de acta notarial, asegurando que los datos sensibles sean eliminados de manera segura y profesional.",
-        imagen: "IMG/caso-oxy.jpg",
-        alt: "Caso Occidental Chemical"
-    }
-];
-
+// Carrusel de Casos de Éxito
 function renderCaseHTML(caso) {
   return `
     <div class="col-md-4">
-      <div class="card shadow-sm custom-card">
+      <div class="card shadow-sm custom-card h-100">
         <img src="${caso.imagen}" class="card-img-top" alt="${caso.alt}">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">${caso.titulo}</h5>
           <p class="card-subtitle mb-2 text-muted">${caso.subtitulo}</p>
           <p class="card-text">${caso.descripcion || "Descripción no disponible."}</p>
@@ -49,14 +31,7 @@ crearCarrusel({
   renderItemHTML: renderCaseHTML
 });
 
-// --- INICIALIZACIÓN DEL CARRUSEL DE PARTNERS ---
-const partnersData = [
-  { nombre: "PureStorage", logo: "IMG/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
-  { nombre: "HPE", logo: "IMG/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
-  { nombre: "Recycla", logo: "IMG/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
-  { nombre: "WatchGuard", logo: "IMG/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
-];
-
+// Carrusel de Partners
 function renderPartnerHTML(partner) {
   return `
     <div class="col-3 text-center">
@@ -74,3 +49,21 @@ crearCarrusel({
   itemsPerSlide: 4,
   renderItemHTML: renderPartnerHTML
 });
+
+// --- INICIALIZACIÓN DE LA SECCIÓN DE SERVICIOS ---
+renderServicesTabs(servicesData);
+
+
+// --- LÓGICA PARA EL MODAL DE IMÁGENES ---
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
+  imageModal.addEventListener('show.bs.modal', function (event) {
+    // Botón que disparó el modal
+    const triggerLink = event.relatedTarget;
+    // Extraer la URL de la imagen del atributo data
+    const imgSrc = triggerLink.getAttribute('data-bs-img-src');
+    // Actualizar la imagen dentro del modal
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = imgSrc;
+  });
+}

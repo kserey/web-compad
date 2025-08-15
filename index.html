@@ -96,29 +96,22 @@
 
 
 <!-- Servicios -->
-<section id="services" class="py-5 bg-light">
+<section id="services" class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5">Nuestros Servicios</h2>
-    <div class="row g-4">
-      <div class="col-md-3 text-center">
-        <i class="bi bi-gear-fill display-4 text-accent"></i>
-        <h5 class="mt-3">Consultoría IT</h5>
-        <p>Asesoría y apoyo en proyectos y procesos IT.</p>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Nuestras Soluciones para tu Negocio</h2>
+      <p class="text-muted">Explora cómo podemos ayudarte a optimizar, proteger y potenciar tu infraestructura tecnológica.</p>
+    </div>
+
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-4">
+        <div class="nav nav-pills flex-column" id="services-tab-buttons" role="tablist">
+          </div>
       </div>
-      <div class="col-md-3 text-center">
-        <i class="bi bi-shield-lock-fill display-4 text-accent"></i>
-        <h5 class="mt-3">Ciberseguridad</h5>
-        <p>Protección de infraestructura y datos con enfoque Blue Team.</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <i class="bi bi-recycle display-4 text-accent"></i>
-        <h5 class="mt-3">Destrucción de Medios</h5>
-        <p>Degausser y eliminación certificada de medios físicos.</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <i class="bi bi-laptop display-4 text-accent"></i>
-        <h5 class="mt-3">Venta de Productos</h5>
-        <p>Distribución y venta de equipos IT.</p>
+
+      <div class="col-lg-8">
+        <div class="tab-content" id="services-tab-content">
+          </div>
       </div>
     </div>
   </div>
@@ -169,30 +162,84 @@
 
 
 
-<!-- Contacto -->
-<section id="contact" class="py-5">
+<section id="contact" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-4">Contáctanos</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="https://formsubmit.co/TU_CORREO@compad-it.cl" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-          <div class="mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Hablemos de tu Proyecto</h2>
+      <p class="text-muted">Completa el formulario o contáctanos directamente a través de nuestros canales.</p>
+    </div>
+
+    <div class="row g-5">
+
+      <div class="col-lg-5">
+        <div class="p-4 p-md-5 bg-white shadow-sm rounded-4 h-100">
+          <h4 class="fw-bold mb-4">Información de Contacto</h4>
+          
+          <div class="d-flex align-items-start mb-4">
+            <i class="bi bi-geo-alt-fill fs-4 text-accent me-3"></i>
+            <div>
+              <strong>Dirección</strong>
+              <p class="text-muted mb-0">Apoquindo 2930, Piso 2, Las Condes. <br>Región Metropolitana - Chile</p>
+            </div>
           </div>
-          <div class="mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Correo" required>
+
+          <div class="d-flex align-items-start mb-4">
+            <i class="bi bi-telephone-fill fs-4 text-accent me-3"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <p class="text-muted mb-0"><a href="tel:+56971379769" class="text-reset text-decoration-none">+56 9 7137 9769</a></p>
+            </div>
           </div>
-          <div class="mb-3">
-            <input type="tel" name="phone" class="form-control" placeholder="Teléfono">
+          
+          <div class="d-flex align-items-start mb-4">
+            <i class="bi bi-envelope-fill fs-4 text-accent me-3"></i>
+            <div>
+              <strong>Email</strong>
+              <p class="text-muted mb-0"><a href="mailto:contacto@compad-it.cl" class="text-reset text-decoration-none">contacto@compad-it.cl</a></p>
+            </div>
           </div>
-          <div class="mb-3">
-            <textarea name="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+
+          <div class="d-flex align-items-start">
+            <i class="bi bi-linkedin fs-4 text-accent me-3"></i>
+            <div>
+              <strong>LinkedIn</strong>
+              <p class="text-muted mb-0"><a href="https://www.linkedin.com/company/compad-it/" target="_blank" class="text-reset text-decoration-none">Compad IT</a></p>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary w-100">Enviar</button>
-        </form>
+        </div>
       </div>
+
+      <div class="col-lg-7">
+        <div class="p-4 p-md-5 bg-white shadow-sm rounded-4 h-100">
+          <form action="https://formsubmit.co/contacto@compad-it.cl" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+            
+            <div class="mb-3">
+              <label for="contact-name" class="form-label">Nombre</label>
+              <input type="text" id="contact-name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="contact-email" class="form-label">Correo Electrónico</label>
+              <input type="email" id="contact-email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="contact-phone" class="form-label">Teléfono (Opcional)</label>
+              <input type="tel" id="contact-phone" name="phone" class="form-control">
+            </div>
+            
+            <div class="mb-3">
+              <label for="contact-message" class="form-label">Mensaje</label>
+              <textarea id="contact-message" name="message" class="form-control" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100 py-2">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -201,6 +248,17 @@
 <footer class="bg-dark text-white py-3 text-center">
   <p class="mb-0">© 2025 Compad. Todos los derechos reservados.</p>
 </footer>
+
+<!-- MODAL -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img src="" class="img-fluid" id="modalImage" alt="Vista ampliada del servicio">
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

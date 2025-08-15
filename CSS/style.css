@@ -33,7 +33,7 @@ body {
   z-index: 2;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
   color: var(--primary-color) !important;
 }
 
@@ -58,6 +58,40 @@ body {
 #about-us .p-4:hover i {
   transform: scale(1.15);
   color: #0d6efd;
+}
+
+
+#services .nav-pills .nav-link {
+  color: #343a40;
+  transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
+}
+
+#services .nav-pills .nav-link:not(.active):hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+#services .nav-pills .nav-link.active, 
+#services .nav-pills .show > .nav-link,
+#services .nav-pills .nav-link.active:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ----- Estilos para Galería de Servicios ----- */
+.service-gallery-img {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.service-gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+#imageModal .modal-content {
+  background: transparent;
+  border: none;
 }
 
 footer {
