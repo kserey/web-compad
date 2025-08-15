@@ -1,16 +1,23 @@
-// JS/script.js
-
-// Importaciones de módulos
 import { crearCarrusel } from './carrusel-generator.js';
 import { renderServicesTabs } from './services-renderer.js';
 import { casesData, partnersData, servicesData } from './data.js';
 
-// --- INICIALIZACIÓN DE CARRUSELES ---
+document.addEventListener('DOMContentLoaded', () => {
+  renderServicesTabs(servicesData);
+});
 
-// Carrusel de Casos de Éxito
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    renderServicesTabs(servicesData);
+  }, 250);
+});
+
+/* ===== CASES ===== */
 function renderCaseHTML(caso) {
   return `
-    <div class="col-md-4">
+    <div class="col-12 col-md-4">
       <div class="card shadow-sm custom-card h-100">
         <img src="${caso.imagen}" class="card-img-top" alt="${caso.alt}">
         <div class="card-body d-flex flex-column">
@@ -23,18 +30,23 @@ function renderCaseHTML(caso) {
   `;
 }
 
-crearCarrusel({
-  data: casesData,
-  carouselId: 'casesCarousel',
-  containerId: 'cases-container',
-  itemsPerSlide: 3,
-  renderItemHTML: renderCaseHTML
-});
+function setupCasesCarousel() {
+  const itemsPerSlide = window.innerWidth < 768 ? 1 : 3;
+  crearCarrusel({
+    data: casesData,
+    carouselId: 'casesCarousel',
+    containerId: 'cases-container',
+    itemsPerSlide,
+    renderItemHTML: renderCaseHTML,
+    autoplay: false, // sin autoplay para lectura tranquila
+    interval: 10000
+  });
+}
 
-// Carrusel de Partners
+/* ===== PARTNERS ===== */
 function renderPartnerHTML(partner) {
   return `
-    <div class="col-3 text-center">
+    <div class="col text-center">
       <a href="${partner.url}" target="_blank" class="partner-link">
         <img src="${partner.logo}" alt="${partner.alt}" class="partner-logo">
       </a>
@@ -42,28 +54,46 @@ function renderPartnerHTML(partner) {
   `;
 }
 
-crearCarrusel({
-  data: partnersData,
-  carouselId: 'partnersCarousel',
-  containerId: 'partners-container',
-  itemsPerSlide: 4,
-  renderItemHTML: renderPartnerHTML
-});
-
-// --- INICIALIZACIÓN DE LA SECCIÓN DE SERVICIOS ---
-renderServicesTabs(servicesData);
-
-
-// --- LÓGICA PARA EL MODAL DE IMÁGENES ---
-const imageModal = document.getElementById('imageModal');
-if (imageModal) {
-  imageModal.addEventListener('show.bs.modal', function (event) {
-    // Botón que disparó el modal
-    const triggerLink = event.relatedTarget;
-    // Extraer la URL de la imagen del atributo data
-    const imgSrc = triggerLink.getAttribute('data-bs-img-src');
-    // Actualizar la imagen dentro del modal
-    const modalImage = document.getElementById('modalImage');
-    modalImage.src = imgSrc;
+function setupPartnersCarousel() {
+  const itemsPerSlide = window.innerWidth < 768 ? 2 : 4;
+  crearCarrusel({
+    data: partnersData,
+    carouselId: 'partnersCarousel',
+    containerId: 'partners-container',
+    itemsPerSlide,
+    renderItemHTML: renderPartnerHTML,
+    autoplay: true, // autoplay para logos
+    interval: 3000
   });
 }
+
+/* ===== INIT ===== */
+function initCarousels() {
+  setupCasesCarousel();
+  setupPartnersCarousel();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousels();
+  renderServicesTabs(servicesData);
+});
+
+/* ===== MODAL ===== */
+const imageModal = document.getElementById('imageModal');
+if (imageModal) {
+  imageModal.addEventListener('show.bs.modal', event => {
+    const triggerLink = event.relatedTarget;
+    document.getElementById('modalImage').src = triggerLink.getAttribute('data-bs-img-src');
+  });
+}
+
+/* ===== NAVBAR MOBILE CLOSE ===== */
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navbarCollapse.classList.contains('show')) {
+      new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
+    }
+  });
+});

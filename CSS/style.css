@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
+  overflow-x: hidden; /* Evita scroll lateral */
+}
+
+body {
+  overflow-x: hidden; /* Refuerzo para evitar desplazamiento lateral */
 }
 
 :root {
@@ -8,12 +13,11 @@ html {
   --accent-color: #FF6A45;
 }
 
-.text-accent { color: var(--accent-color) !important; }
-
-body {
-  scroll-behavior: smooth;
+.text-accent {
+  color: var(--accent-color);
 }
 
+/* ===== HERO ===== */
 .hero {
   position: relative;
   background: var(--primary-color) url('../IMG/hero-bg.png') center/cover no-repeat;
@@ -25,7 +29,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* oscurece */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero .container {
@@ -33,10 +37,12 @@ body {
   z-index: 2;
 }
 
+/* ===== NAVBAR ===== */
 .navbar .nav-link:hover {
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
 }
 
+/* ===== BOTONES ===== */
 .btn-primary {
   background-color: var(--primary-color);
   border: none;
@@ -46,7 +52,7 @@ body {
   background-color: #c53c1f;
 }
 
-
+/* ===== ABOUT US ===== */
 #about-us h2 {
   font-size: 2rem;
 }
@@ -60,7 +66,7 @@ body {
   color: #0d6efd;
 }
 
-
+/* ===== SERVICES ===== */
 #services .nav-pills .nav-link {
   color: #343a40;
   transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
@@ -71,18 +77,16 @@ body {
   color: #212529;
 }
 
-#services .nav-pills .nav-link.active, 
-#services .nav-pills .show > .nav-link,
-#services .nav-pills .nav-link.active:hover {
+#services .nav-pills .nav-link.active,
+#services .nav-pills .show > .nav-link {
   background-color: var(--primary-color);
   color: #fff;
 }
 
-/* ----- Estilos para Galería de Servicios ----- */
+/* Galería servicios */
 .service-gallery-img {
-  background-color: transparent;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .service-gallery-img:hover {
@@ -99,25 +103,20 @@ body {
   border-radius: 10px;
 }
 
+/* ===== FOOTER ===== */
 footer {
   font-size: 0.9rem;
 }
 
-/* ============================================= */
-/* ===== COMPONENTES GENERALES REUTILIZABLES ===== */
-/* ============================================= */
-
-/* ----- Componente: Tarjeta Personalizada ----- */
+/* ===== CUSTOM CARD ===== */
 .custom-card {
   border: none;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  will-change: transform, box-shadow;
 }
 
 .custom-card::before {
@@ -127,7 +126,7 @@ footer {
   top: 0;
   width: 6px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--primary-color), #ff6a45);
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
   background-size: 100% 200%;
   transition: background-position 0.5s ease;
 }
@@ -148,7 +147,6 @@ footer {
 
 .custom-card .card-body {
   padding: 1.5rem;
-  /* Lógica para igualar altura: el cuerpo crece para ocupar el espacio sobrante */
   flex-grow: 1;
 }
 
@@ -156,23 +154,24 @@ footer {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 0.25rem;
 }
 
 .custom-card .card-subtitle {
   font-size: 0.95rem;
   font-weight: 500;
   color: #6c757d;
-  margin-bottom: 0.75rem;
 }
 
 .custom-card .card-text {
   font-size: 0.9rem;
-  line-height: 1.4;
   color: #444;
 }
 
-/* ----- Componente: Carrusel Personalizado ----- */
+/* ===== CARRUSELES ===== */
+.carousel-inner {
+  overflow: hidden;
+}
+
 .custom-carousel .carousel-control-prev-icon,
 .custom-carousel .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.4);
@@ -181,21 +180,14 @@ footer {
   background-size: 50%;
 }
 
-/* Oculta las flechas si solo hay un slide */
 .custom-carousel.controls-hidden .carousel-control-prev,
 .custom-carousel.controls-hidden .carousel-control-next {
   display: none;
 }
 
-
-/* =============================================== */
-/* ===== ESTILOS ESPECÍFICOS DE CADA SECCIÓN ===== */
-/* =============================================== */
-
-/* ----- Sección: Partners ----- */
+/* ===== PARTNERS ===== */
 #partnersCarousel .partner-link {
   padding: 0 1rem;
-  display: block;
 }
 
 #partnersCarousel .partner-logo {
@@ -209,29 +201,90 @@ footer {
   transform: scale(1.1);
 }
 
-/* Espacio para que las flechas no pisen los logos (esto es específico de este carrusel) */
 #partnersCarousel .carousel-item {
-  padding: 0 5rem;
+  padding: 0 3rem;
 }
 
-/* Responsive de la sección Partners */
+/* ===== ACORDEÓN DE SERVICIOS (MÓVIL) ===== */
+#services .accordion {
+  border: none;
+}
+
+#services .accordion-item {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+#services .accordion-button {
+  background-color: #fff;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#services .accordion-button:hover {
+  background-color: rgba(233, 73, 37, 0.05);
+}
+
+#services .accordion-button:not(.collapsed) {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+#services .accordion-button::after {
+  filter: invert(46%) sepia(82%) saturate(2800%) hue-rotate(344deg) brightness(97%) contrast(96%);
+  transition: transform 0.2s ease;
+}
+
+#services .accordion-button:not(.collapsed)::after {
+  filter: invert(100%) brightness(200%);
+  transform: rotate(180deg);
+}
+
+#services .accordion-body {
+  background-color: #fff;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+#services .accordion-body h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+#services .accordion-body hr {
+  border-top: 2px solid rgba(233, 73, 37, 0.2);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   #partnersCarousel .partner-logo {
     height: 120px;
   }
   #partnersCarousel .carousel-item {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 }
 
-@media (max-width: 576px) {
-  #partnersCarousel .partner-logo {
-    height: 80px;
-  }
-  #partnersCarousel .partner-link {
-    padding: 0 0.5rem;
-  }
+@media (max-width: 600px) {
   #partnersCarousel .carousel-item {
-    padding: 0 2.5rem;
+    padding: 0 0.5rem;
   }
 }
