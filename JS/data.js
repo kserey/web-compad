@@ -94,7 +94,7 @@ export const servicesData = [
           texto: 'Configuramos flujos de revisión y aprobación con reglas de negocio parametrizables que se adaptan a tu operación.' },
         { 
           icono: 'bi-building-fill-gear', 
-          itulo: 'Integración con tu ERP', 
+          titulo: 'Integración con tu ERP', 
           texto: 'Nuestra plataforma se complementa con tu ERP actual (SAP, Oracle, etc.) para evitar la doble digitación y acelerar la contabilidad.' 
         },
         { 
