@@ -44,10 +44,25 @@ export const servicesData = [
         final: ', respaldado por ingenieros certificados y las mejores herramientas del mercado.'
       },
       puntosClave: [
-        { icono: 'bi-diagram-3-fill', titulo: 'Análisis y Gestión de Proyectos', texto: 'Realizamos análisis de infraestructura, planificación y control de proyectos para garantizar el éxito de tus iniciativas.' },
-        { icono: 'bi-hdd-stack-fill', titulo: 'Plataformas y Almacenamiento', texto: 'Administramos y gestionamos plataformas de almacenamiento y SAN, asegurando un rendimiento y uso óptimo de tu capacidad.' },
-        { icono: 'bi-headset', titulo: 'Soporte e Ingeniería Senior', texto: 'Ofrecemos soporte especializado en servidores y entornos virtuales, gestión de servicios (CMDB) y mejora continua de procesos.' },
-        { icono: 'bi-file-earmark-lock2-fill', titulo: 'Documentación y Cumplimiento', texto: 'Documentamos servicios y procesos críticos, manteniendo un repositorio central que cumple con tus normativas de seguridad.' }
+        { 
+          icono: 'bi-diagram-3-fill', 
+          titulo: 'Análisis y Gestión de Proyectos', 
+          texto: 'Realizamos análisis de infraestructura, planificación y control de proyectos para garantizar el éxito de tus iniciativas.' 
+        },
+        { 
+          icono: 'bi-hdd-stack-fill', titulo: 'Plataformas y Almacenamiento', 
+          texto: 'Administramos y gestionamos plataformas de almacenamiento y SAN, asegurando un rendimiento y uso óptimo de tu capacidad.' 
+        },
+        { 
+          icono: 'bi-headset', 
+          titulo: 'Soporte e Ingeniería Senior', 
+          texto: 'Ofrecemos soporte especializado en servidores y entornos virtuales, gestión de servicios (CMDB) y mejora continua de procesos.' 
+        },
+        { 
+          icono: 'bi-file-earmark-lock2-fill', 
+          titulo: 'Documentación y Cumplimiento', 
+          texto: 'Documentamos servicios y procesos críticos, manteniendo un repositorio central que cumple con tus normativas de seguridad.' 
+        }
       ]
     }
   },
@@ -68,10 +83,25 @@ export const servicesData = [
         { src: 'IMG/edp-contrato.png', alt: 'Reportes contrato individual' }
       ],
       puntosClave: [
-        { icono: 'bi-diagram-3-fill', titulo: 'Flujo 100% Digital y Trazable', texto: 'Desde la emisión electrónica del EDP por parte del proveedor hasta la liberación del pago, cada acción queda registrada.' },
-        { icono: 'bi-toggles', titulo: 'Aprobaciones Flexibles', texto: 'Configuramos flujos de revisión y aprobación con reglas de negocio parametrizables que se adaptan a tu operación.' },
-        { icono: 'bi-building-fill-gear', titulo: 'Integración con tu ERP', texto: 'Nuestra plataforma se complementa con tu ERP actual (SAP, Oracle, etc.) para evitar la doble digitación y acelerar la contabilidad.' },
-        { icono: 'bi-bar-chart-line-fill', titulo: 'Visibilidad y Reporting', texto: 'Accede a dashboards y reportes consolidados para tener una visión financiera clara del estado de cada documento.' }
+        { 
+          icono: 'bi-diagram-3-fill', 
+          titulo: 'Flujo 100% Digital y Trazable', 
+          texto: 'Desde la emisión electrónica del EDP por parte del proveedor hasta la liberación del pago, cada acción queda registrada.' 
+        },
+        { 
+          icono: 'bi-toggles', 
+          titulo: 'Aprobaciones Flexibles', 
+          texto: 'Configuramos flujos de revisión y aprobación con reglas de negocio parametrizables que se adaptan a tu operación.' },
+        { 
+          icono: 'bi-building-fill-gear', 
+          itulo: 'Integración con tu ERP', 
+          texto: 'Nuestra plataforma se complementa con tu ERP actual (SAP, Oracle, etc.) para evitar la doble digitación y acelerar la contabilidad.' 
+        },
+        { 
+          icono: 'bi-bar-chart-line-fill', 
+          titulo: 'Visibilidad y Reporting', 
+          texto: 'Accede a dashboards y reportes consolidados para tener una visión financiera clara del estado de cada documento.'
+        }
       ]
     }
   },
@@ -81,18 +111,53 @@ export const servicesData = [
     subtitulo: 'Protección con enfoque Blue Team.',
     contenido: {
       tituloPanel: 'Fortaleciendo tu Defensa Digital',
-      descripcion: {
+      descripcion: 
+      {
         inicio: 'Ante el incremento global de ciberataques que afectan a empresas de todos los tamaños, ',
         enfasis: 'nuestro enfoque Blue Team actúa como tu equipo defensivo.',
         final: ' Nos encargamos de proteger tu infraestructura, monitorear amenazas y responder a incidentes para mantener la continuidad de tus operaciones y resguardar tu reputación.'
       },
       puntosClave: [
-        { icono: 'bi-shield-shaded', titulo: 'Implementación de Firewalls', texto: 'Configuramos y ajustamos reglas de seguridad para proteger la red perimetral de accesos no autorizados.' },
-        { icono: 'bi-pc-display-horizontal', titulo: 'Protección de Endpoints', texto: 'Instalamos y optimizamos soluciones de antivirus y EDR en equipos críticos para defenderte de malware y ransomware.' },
-        { icono: 'bi-binoculars-fill', titulo: 'Monitoreo de Logs y Eventos', texto: 'Supervisamos continuamente las alertas clave de tus sistemas para detectar anomalías y amenazas de forma temprana.' },
-        { icono: 'bi-database-fill-lock', titulo: 'Gestión de Copias de Seguridad', texto: 'Verificamos y optimizamos tus planes de respaldo para asegurar la recuperación de datos y la continuidad operativa.' },
-        { icono: 'bi-person-check-fill', titulo: 'Revisión de Configuraciones', texto: 'Realizamos auditorías básicas de contraseñas, políticas de acceso y otras configuraciones críticas de seguridad.' },
-        { icono: 'bi-people-fill', titulo: 'Capacitación y Concienciación', texto: 'Ofrecemos talleres a tus equipos para crear conciencia sobre phishing y fomentar buenas prácticas de seguridad.' }
+        { 
+          icono: 'bi-shield-shaded', 
+          titulo: 'Implementación de Firewalls', 
+          texto: 'Configuramos y ajustamos reglas de seguridad para proteger la red perimetral de accesos no autorizados.' 
+        },
+        { 
+          icono: 'bi-pc-display-horizontal', 
+          titulo: 'Protección de Endpoints', 
+          texto: 'Instalamos y optimizamos soluciones de antivirus y EDR en equipos críticos para defenderte de malware y ransomware.' 
+        },
+        { 
+          icono: 'bi-binoculars-fill', 
+          titulo: 'Monitoreo de Logs y Eventos', 
+          texto: 'Supervisamos continuamente las alertas clave de tus sistemas para detectar anomalías y amenazas de forma temprana.' 
+        },
+        { 
+          icono: 'bi-database-fill-lock', 
+          titulo: 'Gestión de Copias de Seguridad', 
+          texto: 'Verificamos y optimizamos tus planes de respaldo para asegurar la recuperación de datos y la continuidad operativa.' 
+        },
+        {
+          icono: 'bi-person-check-fill', 
+          titulo: 'Revisión de Configuraciones', 
+          texto: 'Realizamos auditorías básicas de contraseñas, políticas de acceso y otras configuraciones críticas de seguridad.' 
+        },
+        { 
+          icono: 'bi-people-fill', 
+          titulo: 'Capacitación y Concienciación', 
+          texto: 'Ofrecemos talleres a tus equipos para crear conciencia sobre phishing y fomentar buenas prácticas de seguridad.' 
+        },
+        {
+          icono: 'bi-shield-check',
+          titulo: 'Ethical Hacking',
+          texto: 'Simulamos ataques controlados para identificar y corregir brechas de seguridad antes de que sean explotadas por actores maliciosos.'
+        },
+        {
+            icono: 'bi-search',
+            titulo: 'Escaneo de Vulnerabilidades',
+            texto: 'Analizamos tus sistemas y aplicaciones de forma continua en busca de debilidades conocidas para gestionar y priorizar su remediación.'
+        }
       ]
     }
   },
@@ -102,19 +167,33 @@ export const servicesData = [
     subtitulo: 'Eliminación segura y certificada de datos.',
     contenido: {
         tituloPanel: 'Destrucción Segura y Certificada de Medios',
-        descripcion: {
+        descripcion: 
+        {
             inicio: 'Garantizamos la eliminación de datos confidenciales en discos y cintas, ',
             enfasis: 'con certificación notarial y cumplimiento de la norma PCI',
             final: ', para tu completa tranquilidad y seguridad en cada etapa del proceso.'
         },
-        imagenProceso: {
+        imagenProceso: 
+        {
             src: 'IMG/degauss.png',
             alt: 'Diagrama del proceso de destrucción de medios'
         },
         puntosClave: [
-            { icono: 'bi-magnet-fill', titulo: 'Borrado Lógico (Degaussing)', texto: 'Usamos hardware de desmagnetización para destruir datos a nivel magnético.' },
-            { icono: 'bi-recycle', titulo: 'Destrucción y Reciclaje Físico', texto: 'Coordinamos la eliminación de partes mecánicas y platos en plantas de reciclaje especializadas.' },
-            { icono: 'bi-patch-check-fill', titulo: 'Certificación Notarial', texto: 'Entregamos un informe detallado y un certificado de reciclaje notariado que respalda todo el proceso.' }
+            { 
+              icono: 'bi-magnet-fill', 
+              titulo: 'Borrado Lógico (Degaussing)', 
+              texto: 'Usamos hardware de desmagnetización para destruir datos a nivel magnético.' 
+            },
+            { 
+              icono: 'bi-recycle', 
+              titulo: 'Destrucción y Reciclaje Físico', 
+              texto: 'Coordinamos la eliminación de partes mecánicas y platos en plantas de reciclaje especializadas.' 
+            },
+            { 
+              icono: 'bi-patch-check-fill', 
+              titulo: 'Certificación Notarial', 
+              texto: 'Entregamos un informe detallado y un certificado de reciclaje notariado que respalda todo el proceso.' 
+            }
         ]
     }
   },
@@ -124,15 +203,28 @@ export const servicesData = [
     subtitulo: 'Equipamiento y hardware de marcas líderes.',
     contenido: {
       tituloPanel: 'Venta e Integración de Hardware IT',
-      descripcion: {
+      descripcion: 
+      {
         inicio: 'Más que vendedores, somos tus guías de confianza en la adquisición de tecnología. Gracias a nuestros convenios con marcas líderes, ',
         enfasis: 'te ayudamos a seleccionar e implementar el equipamiento exacto que tu negocio necesita',
         final: ' para crecer, asegurando compatibilidad y rendimiento.'
       },
       puntosClave: [
-        { icono: 'bi-server', titulo: 'Almacenamiento y Servidores', texto: 'Equipos de almacenamiento flash y servidores de alto rendimiento.' },
-        { icono: 'bi-database-fill-lock', titulo: 'Backup y Continuidad', texto: 'Unidades de Respaldo (NBUs), librerías y cintas de respaldo.' },
-        { icono: 'bi-hdd-network-fill', titulo: 'Conectividad y Componentes', texto: 'Switches SAN de alto rendimiento, unidades de disco y periféricos.' }
+        { 
+          icono: 'bi-server', 
+          titulo: 'Almacenamiento y Servidores', 
+          texto: 'Equipos de almacenamiento flash y servidores de alto rendimiento.' 
+        },
+        { 
+          icono: 'bi-database-fill-lock', 
+          titulo: 'Backup y Continuidad', 
+          texto: 'Unidades de Respaldo (NBUs), librerías y cintas de respaldo.' 
+        },
+        { 
+          icono: 'bi-hdd-network-fill', 
+          titulo: 'Conectividad y Componentes', 
+          texto: 'Switches SAN de alto rendimiento, unidades de disco y periféricos.'
+        }
       ]
     }
   }

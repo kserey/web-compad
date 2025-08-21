@@ -1,11 +1,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
-  overflow-x: hidden; /* Evita scroll lateral */
+  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden; /* Refuerzo para evitar desplazamiento lateral */
+  overflow-x: hidden;
 }
 
 :root {
@@ -42,7 +42,7 @@ body {
   color: var(--primary-color);
 }
 
-/* ===== MENÚ HAMBURGUESA ===== */
+/* ===== BURGER MENU ===== */
 .navbar-toggler {
   border: none;
   padding: 0.5rem;
@@ -60,9 +60,8 @@ body {
   box-shadow: 0 0 0 3px rgba(233, 73, 37, 0.25);
 }
 
-/* Cambiar color del icono hamburguesa */
 .navbar-light .navbar-toggler-icon {
-  background-image: none; /* Quitamos el SVG default de Bootstrap */
+  background-image: none;
   width: 1.5em;
   height: 1.5em;
   position: relative;
@@ -84,7 +83,6 @@ body {
   height: 3px;
 }
 
-/* Animación al abrir */
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
   transform: translateY(8px) rotate(45deg);
 }

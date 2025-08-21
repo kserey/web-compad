@@ -105,3 +105,35 @@ navLinks.forEach(link => {
     }
   });
 });
+
+
+// COMPORTAMIENTO DEL TOAST DE CONFIRMACIÓN DE ENVÍO DE FORMULARIO
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("#contact form");
+  const toastEl = document.getElementById("contactToast");
+  const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        form.reset();
+        toast.show();
+      } else {
+        alert("Hubo un problema al enviar el mensaje. Intenta nuevamente.");
+      }
+    } catch (error) {
+      alert("Error de conexión. Por favor, inténtalo más tarde.");
+    }
+  });
+});
