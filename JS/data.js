@@ -118,6 +118,16 @@ export const servicesData = [
         final: ' Nos encargamos de proteger tu infraestructura, monitorear amenazas y responder a incidentes para mantener la continuidad de tus operaciones y resguardar tu reputación.'
       },
       puntosClave: [
+        {
+          icono: 'bi-shield-check',
+          titulo: 'Ethical Hacking',
+          texto: 'Simulamos ataques controlados para identificar y corregir brechas de seguridad antes de que sean explotadas por actores maliciosos.'
+        },
+        {
+            icono: 'bi-search',
+            titulo: 'Escaneo de Vulnerabilidades',
+            texto: 'Analizamos tus sistemas y aplicaciones de forma continua en busca de debilidades conocidas para gestionar y priorizar su remediación.'
+        },
         { 
           icono: 'bi-shield-shaded', 
           titulo: 'Implementación de Firewalls', 
@@ -147,16 +157,6 @@ export const servicesData = [
           icono: 'bi-people-fill', 
           titulo: 'Capacitación y Concienciación', 
           texto: 'Ofrecemos talleres a tus equipos para crear conciencia sobre phishing y fomentar buenas prácticas de seguridad.' 
-        },
-        {
-          icono: 'bi-shield-check',
-          titulo: 'Ethical Hacking',
-          texto: 'Simulamos ataques controlados para identificar y corregir brechas de seguridad antes de que sean explotadas por actores maliciosos.'
-        },
-        {
-            icono: 'bi-search',
-            titulo: 'Escaneo de Vulnerabilidades',
-            texto: 'Analizamos tus sistemas y aplicaciones de forma continua en busca de debilidades conocidas para gestionar y priorizar su remediación.'
         }
       ]
     }
