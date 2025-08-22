@@ -20,7 +20,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  background: var(--primary-color) url('../IMG/hero-bg.png') center/cover no-repeat;
+  background: var(--primary-color) url('../IMG/general/hero-bg.png') center/cover no-repeat;
   min-height: 90vh;
   padding-top: 70px;
 }
@@ -86,9 +86,11 @@ body {
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
   transform: translateY(8px) rotate(45deg);
 }
+
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   transform: translateY(-8px) rotate(-45deg);
 }
+
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon div {
   opacity: 0;
 }
@@ -103,7 +105,16 @@ body {
   background-color: #c53c1f;
 }
 
-/* ===== ABOUT US ===== */
+.btn-outline-primary {
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: var(--accent-color);
+  --bs-btn-active-border-color: var(--accent-color);
+}
+
+/* ===== SECCIONES ===== */
 #about-us h2 {
   font-size: 2rem;
 }
@@ -117,7 +128,6 @@ body {
   color: var(--primary-color);
 }
 
-/* ===== SERVICES ===== */
 #services .nav-pills .nav-link {
   color: #343a40;
   transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
@@ -134,7 +144,6 @@ body {
   color: #fff;
 }
 
-/* Galería servicios */
 .service-gallery-img {
   cursor: pointer;
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
@@ -154,12 +163,10 @@ body {
   border-radius: 10px;
 }
 
-/* ===== FOOTER ===== */
 footer {
   font-size: 0.9rem;
 }
 
-/* ===== CUSTOM CARD ===== */
 .custom-card {
   border: none;
   border-radius: 10px;
@@ -218,7 +225,6 @@ footer {
   color: #444;
 }
 
-/* ===== CARRUSELES ===== */
 .carousel-inner {
   overflow: hidden;
 }
@@ -236,7 +242,6 @@ footer {
   display: none;
 }
 
-/* ===== PARTNERS ===== */
 #partnersCarousel .partner-link {
   padding: 0 1rem;
 }
@@ -256,7 +261,6 @@ footer {
   padding: 0 3rem;
 }
 
-/* ===== ACORDEÓN DE SERVICIOS (MÓVIL) ===== */
 #services .accordion {
   border: none;
 }
@@ -317,14 +321,30 @@ footer {
   border-top: 2px solid rgba(233, 73, 37, 0.2);
 }
 
-/* Animación suave */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Estilos de enlaces SÓLO para la página de productos */
+#page-productos a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
+#page-productos a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
 
-/* ===== RESPONSIVE ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 992px) {
   #partnersCarousel .partner-logo {
     height: 120px;

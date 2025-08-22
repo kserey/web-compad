@@ -5,30 +5,31 @@ export const casesData = [
     titulo: "Walmart Chile",
     subtitulo: "Maximizando la eficiencia de tus plataformas virtuales",
     descripcion: "Ayudamos a Walmart Chile a optimizar sus entornos virtuales para que sus operaciones sean más ágiles y confiables. Nuestro equipo brinda soporte especializado en servidores y plataformas virtuales (VMware, Windows, Linux), realizando diagnósticos precisos, mejoras estratégicas y asistencia continua para asegurar un rendimiento óptimo.",
-    imagen: "IMG/caso-walmart.jpeg",
+    imagen: "IMG/casos/caso-walmart.jpeg",
     alt: "Caso Walmart"
   },
   {
     titulo: "Banco BCI",
     subtitulo: "Monitoreo inteligente de sistemas de storage",
     descripcion: "En Banco BCI potenciamos la confiabilidad de su infraestructura SAN con soporte técnico avanzado y análisis de arquitectura. Generamos reportes detallados de rendimiento y recomendaciones estratégicas para maximizar la eficiencia de sus sistemas de almacenamiento, respaldando operaciones críticas del banco.",
-    imagen: "IMG/caso-bci.jpg",
+    imagen: "IMG/casos/caso-bci.jpg",
     alt: "Caso BCI"
   },
   {
     titulo: "Occidental Chemical Chile",
     subtitulo: "Destrucción segura y certificada de información",
     descripcion: "Garantizamos la confidencialidad de la información de Occidental Chemical Chile mediante la destrucción certificada de medios de almacenamiento. Nuestro servicio completo incluye retiro, desarme, degaussing y entrega de acta notarial, asegurando que los datos sensibles sean eliminados de manera segura y profesional.",
-    imagen: "IMG/caso-oxy.jpg",
+    imagen: "IMG/casos/caso-oxy.jpg",
     alt: "Caso Occidental Chemical"
   }
 ];
 
 export const partnersData = [
-  { nombre: "PureStorage", logo: "IMG/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
-  { nombre: "HPE", logo: "IMG/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
-  { nombre: "Recycla", logo: "IMG/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
-  { nombre: "WatchGuard", logo: "IMG/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
+  { nombre: "PureStorage", logo: "IMG/partners/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
+  { nombre: "HPE", logo: "IMG/partners/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
+  { nombre: "Recycla", logo: "IMG/partners/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
+  { nombre: "WatchGuard", logo: "IMG/partners/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
+  { nombre: "Panda", logo: "IMG/partners/partner-panda.png", alt: "Panda", url: "https://www.pandasecurity.com/" }
 ];
 
 export const servicesData = [
@@ -78,9 +79,9 @@ export const servicesData = [
         final: ', entregando trazabilidad, control y visibilidad en tiempo real a todos los involucrados.'
       },
       imagenesPanel: [
-        { src: 'IMG/edp-home.png', alt: 'Página de inicio Estados de Pago' },
-        { src: 'IMG/edp-dashboard.png', alt: 'Dashboard general EDP' },
-        { src: 'IMG/edp-contrato.png', alt: 'Reportes contrato individual' }
+        { src: 'IMG/servicios/edp-home.png', alt: 'Página de inicio Estados de Pago' },
+        { src: 'IMG/servicios/edp-dashboard.png', alt: 'Dashboard general EDP' },
+        { src: 'IMG/servicios/edp-contrato.png', alt: 'Reportes contrato individual' }
       ],
       puntosClave: [
         { 
@@ -175,7 +176,7 @@ export const servicesData = [
         },
         imagenProceso: 
         {
-            src: 'IMG/degauss.png',
+            src: 'IMG/servicios/degauss.png',
             alt: 'Diagrama del proceso de destrucción de medios'
         },
         puntosClave: [
