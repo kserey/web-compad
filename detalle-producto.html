@@ -106,6 +106,48 @@
             </div>
         </div>
 
+        <!-- MODAL CHECKOUT -->
+        <div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="checkoutModalLabel">Datos para la Compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted">Por favor, completa tus datos para generar la orden de compra.</p>
+                        <form id="checkout-form">
+                            <div class="mb-3">
+                                <label for="checkout-name" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="checkout-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="checkout-email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="checkout-email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="checkout-phone" class="form-label">Teléfono (Opcional)</label>
+                                <input type="tel" class="form-control" id="checkout-phone">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Generar Orden de Compra</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form id="order-notification-form" action="https://formsubmit.co/contacto@compad-it.cl" method="POST" class="d-none">
+            
+            <input type="hidden" name="email" value="">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" id="form-subject" value="">
+            <textarea name="order-details" id="form-details"></textarea>
+            <textarea name="_autoresponse" id="form-autoresponse"></textarea>
+        </form>
+
 
         <!-- CARRITO -->
 
