@@ -1,144 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Compad Soluciones IT</title>
-    <link rel="icon" type="image/png" href="IMG/logos/compad2.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuestros Productos - Compad Soluciones IT</title>
+        <link rel="icon" type="image/png" href="IMG/logos/compad2.png">
 
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/tienda.css"> </head>
+        <!-- BOOSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- STYLE -->
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
     <body>
-
+        <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-            <img src="IMG/logos/compad.png" alt="Compad" height="40">
-            </a>
-            <div class="d-flex align-items-center">
-                <button class="btn btn-outline-primary position-relative me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
-                    <i class="bi bi-cart-fill"></i>
-                    <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
-                    0
-                    </span>
-                </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                <img src="IMG/logos/compad.png" alt="Compad" height="40">
+                </a>
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html#about-us">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#cases">Casos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#partners">Partners</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about-us">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#services">Servicios</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#cases">Casos</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#partners">Partners</a></li>
-                <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacto</a></li>
-            </ul>
-            </div>
-        </div>
         </nav>
 
+        <!-- HERO SECTION -->
         <main id="page-productos" class="container" style="padding-top: 120px; padding-bottom: 60px;">
             <div class="text-center mb-5">
-                <h1 class="fw-bold">Elige tu Plan de Protección</h1>
-                <p class="text-muted">Compara nuestras soluciones y encuentra la que mejor se adapta a tus necesidades.</p>
-            </div>
-            <div id="reseñas-container" class="row g-4 mb-5">
-                </div>
-
-            <hr class="my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Calcula el Precio de tu Licencia</h2>
-                <p class="text-muted">Selecciona el número de dispositivos y el plazo para ver los precios de cada plan.</p>
+                <h1 class="fw-bold">Nuestra Tienda</h1>
+                <p class="text-muted">Explora nuestra selección de productos y soluciones de software.</p>
             </div>
 
-            <div id="selector-container" class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="dispositivos-select" class="form-label fw-bold">1. Elige la cantidad de dispositivos</label>
-                                    <select class="form-select form-select-lg" id="dispositivos-select">
-                                        <option value="" selected disabled>Selecciona una opción...</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="años-select" class="form-label fw-bold">2. Elige el plazo</label>
-                                    <select class="form-select form-select-lg" id="años-select">
-                                        <option value="" selected disabled>Selecciona una opción...</option>
-                                    </select>
-                                </div>
-                            </div>
+            <!-- PRODUCTOS -->
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="IMG/productos/logo-panda.png" alt="Panda Security" class="mb-0" style="height: 100px;">
+                            <h3 class="card-title fw-bold">Antivirus Panda Security</h3>
+                            <p class="text-muted">Protección completa y personalizable para todos tus dispositivos. Compara los planes y elige el que más se adapte a ti.</p>
+                            <a href="detalle-producto.html?marca=panda" class="btn btn-primary mt-3">Ver Licencias y Precios</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div id="resultados-container" class="mt-4" style="visibility: hidden; opacity: 0; transition: all 0.5s ease;">
-            </div>
         </main>
 
-        <div class="modal fade" id="tech-specs-modal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-specs-title">Requisitos Técnicos</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body" id="modal-specs-body">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="filtersOffcanvas">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Filtrar Productos</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body" id="filters-container-mobile">
-            </div>
-        </div>
-
         <footer class="bg-dark text-white py-3 text-center">
-        <p class="mb-0">© 2025 Compad. Todos los derechos reservados.</p>
+            <p class="mb-0">© 2025 Compad. Todos los derechos reservados.</p>
         </footer>
 
-        <div class="modal fade" id="productDetailModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-product-title">Nombre del Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body" id="modal-product-body">
-                </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="modal-add-to-cart-btn">Agregar al Carrito</button>
-            </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Mi Carrito</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p>Tu carrito está vacío.</p>
-        </div>
-        </div>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="JS/tienda.js"></script>
-
     </body>
 </html>

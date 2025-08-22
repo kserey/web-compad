@@ -1,44 +1,225 @@
 // JS/tienda.js
-import { productosData, requisitosUniversales } from './productos-data.js';
+import { catalogo, requisitosUniversales } from './productos-data.js';
 
-let seleccionActual = {
-    dispositivos: null,
-    años: null
-};
+let seleccionActual = { dispositivos: null, años: null };
+let carrito = [];
+let productosData = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderizarReseñas();
-    inicializarSelector();
-    inicializarModalRequisitos();
+    const urlParams = new URLSearchParams(window.location.search);
+    const marca = urlParams.get('marca');
+
+    if (marca && catalogo.antivirus.marcas[marca]) {
+        const datosMarca = catalogo.antivirus.marcas[marca];
+        productosData = generarProductosCompletos(datosMarca);
+        renderizarPagina(datosMarca);
+    } else {
+        const mainContainer = document.querySelector('main');
+        if (mainContainer) {
+            mainContainer.innerHTML = `
+                <div class="text-center">
+                    <h2 class="fw-bold">Producto no encontrado</h2>
+                    <p class="text-muted">La marca especificada no existe en nuestro catálogo.</p>
+                    <a href="productos.html" class="btn btn-primary">Volver a la tienda</a>
+                </div>
+            `;
+        }
+    }
 });
 
-function renderizarReseñas() {
-    const container = document.getElementById('reseñas-container');
-    const productosBase = [
-        productosData.find(p => p.nombre === 'Panda Dome Essential'),
-        productosData.find(p => p.nombre === 'Panda Dome Advanced'),
-        productosData.find(p => p.nombre === 'Panda Dome Complete')
+function generarProductosCompletos(datosMarca) {
+    const productosFinales = [];
+    const planes = ['essential', 'advanced', 'complete'];
+    const opciones = [
+        { d: 1, a: 1, p: 0 }, { d: 1, a: 2, p: 1 }, { d: 1, a: 3, p: 2 },
+        { d: 3, a: 1, p: 3 }, { d: 3, a: 2, p: 4 }, { d: 3, a: 3, p: 5 },
+        { d: 5, a: 1, p: 6 }, { d: 5, a: 2, p: 7 }, { d: 5, a: 3, p: 8 },
+        { d: 10, a: 1, p: 9 }, { d: 10, a: 2, p: 10 }, { d: 10, a: 3, p: 11 },
     ];
-    container.innerHTML = productosBase.map(producto => `
+
+    const caracteristicasFull = {
+        essential: datosMarca.caracteristicas.essential,
+        advanced: [
+            ...datosMarca.caracteristicas.essential,
+            ...datosMarca.caracteristicas.advanced
+        ],
+        complete: [
+            ...datosMarca.caracteristicas.essential,
+            ...datosMarca.caracteristicas.advanced,
+            ...datosMarca.caracteristicas.complete
+        ]
+    };
+
+    planes.forEach(plan => {
+        const nombreCompleto = `Panda Dome ${plan.charAt(0).toUpperCase() + plan.slice(1)}`;
+        opciones.forEach(opt => {
+            productosFinales.push({
+                nombre: nombreCompleto,
+                ...datosMarca.descripciones[plan],
+                caracteristicas: caracteristicasFull[plan],
+                id: `${datosMarca.nombreMarca.toLowerCase()}-${plan}-${opt.d}d-${opt.a}a`,
+                subtitulo: `${opt.d} ${opt.d > 1 ? 'Dispositivos' : 'Dispositivo'} / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`,
+                dispositivos: opt.d,
+                años: opt.a,
+                precio: datosMarca.precios[plan][opt.p],
+            });
+        });
+    });
+    return productosFinales;
+}
+
+function renderizarPagina(datosMarca) {
+    carrito = JSON.parse(localStorage.getItem('carritoCompad')) || [];
+    renderizarReseñas(datosMarca.descripciones);
+    inicializarSelector();
+    inicializarModalRequisitos();
+    renderizarCarrito();
+    inicializarListenersCarrito();
+}
+
+// ===== LÓGICA DEL CARRITO =====
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem('carritoCompad')) || [];
+}
+
+function guardarCarrito(carritoActualizado) {
+    localStorage.setItem('carritoCompad', JSON.stringify(carritoActualizado));
+}
+
+function agregarAlCarrito(productoId) {
+    const productoExistente = carrito.find(item => item.id === productoId);
+    if (productoExistente) {
+        productoExistente.cantidad++;
+    } else {
+        const productoNuevo = productosData.find(p => p.id === productoId);
+        if (productoNuevo) {
+            carrito.push({ ...productoNuevo, cantidad: 1 });
+        }
+    }
+    guardarCarrito(carrito);
+    renderizarCarrito();
+    new bootstrap.Offcanvas(document.getElementById('cartOffcanvas')).show();
+}
+
+function actualizarCantidad(productoId, cantidad) {
+    const itemEnCarrito = carrito.find(item => item.id === productoId);
+    if (itemEnCarrito) {
+        cantidad > 0 ? itemEnCarrito.cantidad = cantidad : carrito = carrito.filter(item => item.id !== productoId);
+    }
+    guardarCarrito(carrito);
+    renderizarCarrito();
+}
+
+function eliminarDelCarrito(productoId) {
+    carrito = carrito.filter(item => item.id !== productoId);
+    guardarCarrito(carrito);
+    renderizarCarrito();
+}
+
+// ===== RENDERIZADO DEL CARRITO =====
+function renderizarCarrito() {
+    const cartBody = document.getElementById('cart-body');
+    const cartFooter = document.getElementById('cart-footer');
+    const cartBadge = document.getElementById('cart-badge');
+
+    if (carrito.length === 0) {
+        cartBody.innerHTML = '<p class="text-center text-muted">Tu carrito está vacío.</p>';
+        cartFooter.innerHTML = '';
+        if (cartBadge) cartBadge.style.display = 'none';
+        return;
+    }
+
+    cartBody.innerHTML = carrito.map(item => {
+        const precioFormateado = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(item.precio);
+        return `
+            <div class="d-flex mb-3">
+                <img src="${item.imagen}" alt="${item.nombre}" style="width: 60px; height: 60px; object-fit: contain;">
+                <div class="ms-3 flex-grow-1">
+                    <h6 class="mb-0">${item.nombre}</h6>
+                    <small class="text-muted">${item.subtitulo}</small>
+                    <p class="fw-bold mb-1">${precioFormateado}</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <input type="number" class="form-control form-control-sm item-qty" value="${item.cantidad}" min="1" data-product-id="${item.id}" style="width: 60px;">
+                        <button class="btn btn-sm btn-outline-danger remove-item-btn" data-product-id="${item.id}">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+    const totalFormateado = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(total);
+
+    cartFooter.innerHTML = `
+        <hr>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Total:</h5>
+            <h5 class="mb-0">${totalFormateado}</h5>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" id="checkout-btn">Finalizar Compra</button>
+        </div>
+    `;
+
+    const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    if (cartBadge) {
+        cartBadge.textContent = totalItems;
+        cartBadge.style.display = 'block';
+    }
+}
+
+// ===== EVENT LISTENERS =====
+function inicializarListenersCarrito() {
+    const resultadosContainer = document.getElementById('resultados-container');
+    const cartBody = document.getElementById('cart-body');
+
+    if (resultadosContainer) {
+        resultadosContainer.addEventListener('click', (e) => {
+            if (e.target.matches('.btn-primary[data-product-id]')) {
+                agregarAlCarrito(e.target.getAttribute('data-product-id'));
+            }
+        });
+    }
+    if (cartBody) {
+        cartBody.addEventListener('change', (e) => {
+            if (e.target.classList.contains('item-qty')) {
+                actualizarCantidad(e.target.dataset.productId, parseInt(e.target.value));
+            }
+        });
+        cartBody.addEventListener('click', (e) => {
+            if (e.target.closest('.remove-item-btn')) {
+                eliminarDelCarrito(e.target.closest('.remove-item-btn').dataset.productId);
+            }
+        });
+    }
+}
+
+// ===== LÓGICA DE LA PÁGINA DE PRODUCTOS =====
+function renderizarReseñas(descripciones) {
+    const container = document.getElementById('reseñas-container');
+    const productosBase = [descripciones.essential, descripciones.advanced, descripciones.complete];
+    const nombres = ["Panda Dome Essential", "Panda Dome Advanced", "Panda Dome Complete"];
+    container.innerHTML = productosBase.map((producto, index) => `
         <div class="col-lg-4 d-flex">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body p-4 d-flex flex-column">
                     <div class="row mb-3">
                         <div class="col-3">
-                            <img src="${producto.imagen}" class="img-fluid" alt="${producto.nombre}">
+                            <img src="${producto.imagen}" class="img-fluid" alt="${nombres[index]}">
                         </div>
                         <div class="col-9">
-                            <h4 class="card-title fw-bold">${producto.nombre}</h4>
+                            <h4 class="card-title fw-bold">${nombres[index]}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">${producto.tituloLargo}</h6>
                         </div>
                     </div>
                     <p class="card-text small">${producto.parrafo}</p>
                     <div class="mt-auto pt-3">
                         <p class="small text-muted mb-2">
-                            <i class="bi bi-display-fill me-1"></i>
-                            ${producto.compatibilidad}
+                            <i class="bi bi-display-fill me-1"></i>${producto.compatibilidad}
                         </p>
-                        <a href="${producto.pdf}" target="_blank" class="small" download>
+                        <a href="${producto.pdf}" target="_blank" class="small link-brand" download>
                             <i class="bi bi-file-earmark-pdf-fill me-1"></i>Ficha técnica
                         </a>
                     </div>
@@ -68,107 +249,118 @@ function inicializarSelector() {
 function actualizarPrecios() {
     const resultadosContainer = document.getElementById('resultados-container');
     const { dispositivos, años } = seleccionActual;
-
     if (!dispositivos || !años) {
         resultadosContainer.style.visibility = 'hidden';
         resultadosContainer.style.opacity = '0';
         return;
     }
-
     const planes = ['Panda Dome Essential', 'Panda Dome Advanced', 'Panda Dome Complete'];
     const productosSeleccionados = planes.map(nombre => productosData.find(p => p.nombre === nombre && p.dispositivos === dispositivos && p.años === años)).filter(Boolean);
-
     if (productosSeleccionados.length === 0) return;
 
-    const gruposDeCaracteristicas = [
-        {
-            nombre: "Protección Principal",
-            items: [{ id: "Protege tu PC contra cualquier tipo de amenaza", label: "Protección Antivirus en tiempo real" }]
-        },
-        {
-            nombre: "Seguridad y Navegación",
-            items: [
-                { id: "Protege tu red Wi-Fi de hackers", label: "Protección de red Wi-Fi" },
-                { id: "Protección de dispositivos USB", label: "Protección de dispositivos USB" },
-                { id: "VPN Gratuita (150 MB/día)", label: "VPN Gratuita (150 MB/día)" },
-                { id: "Firewall personal avanzado", label: "Firewall personal" },
-                { id: "Evita el phishing y los sitios fraudulentos", label: "Protección Anti-Phishing" },
-                { id: "Capa de protección adicional frente a ransomware", label: "Protección Anti-Ransomware" }
-            ]
-        },
-        {
-            nombre: "Privacidad y Familia",
-            items: [
-                { id: "Auditor de privacidad en Android", label: "Auditor de privacidad (Android)" },
-                { id: "Protección antirrobo para Android", label: "Antirrobo y localización (Móvil)" },
-                { id: "Localización remota del dispositivo iOS", label: null },
-                { id: "Control Parental", label: "Control Parental" },
-                { id: "Protege y gestiona todas tus contraseñas", label: "Gestor de Contraseñas" },
-                { id: "Crea carpetas cifradas y protegidas", label: "Cifrado de archivos" }
-            ]
-        },
-        {
-            nombre: "Rendimiento y Utilidades",
-            items: [
-                { id: "Modo juego / multimedia", label: "Modo Juego / Multimedia" },
-                { id: "Mejora el rendimiento y duración de la batería en Android", label: "Mejora de rendimiento (Android)" },
-                { id: "Kit de rescate para PCs", label: "Kit de Rescate (PC)" },
-                { id: "Optimización del rendimiento y limpieza del PC", label: "Optimización y limpieza (PC)" },
-                { id: "Eliminación segura de archivos", label: "Eliminación segura de archivos (PC)" }
-            ]
-        }
-    ];
+    const gruposDeCaracteristicas = [{
+        nombre: "Protección Principal",
+        items: [{ id: "Protege tu PC contra cualquier tipo de amenaza", label: "Protección Antivirus en tiempo real" }]
+    }, {
+        nombre: "Seguridad y Navegación",
+        items: [
+            { id: "Protege tu red Wi-Fi de hackers", label: "Protección de red Wi-Fi" },
+            { id: "Protección de dispositivos USB", label: "Protección de dispositivos USB" },
+            { id: "VPN Gratuita (150 MB/día)", label: "VPN Gratuita (150 MB/día)" },
+            { id: "Firewall personal avanzado", label: "Firewall personal" },
+            { id: "Evita el phishing y los sitios fraudulentos", label: "Protección Anti-Phishing" },
+            { id: "Capa de protección adicional frente a ransomware", label: "Protección Anti-Ransomware" }
+        ]
+    }, {
+        nombre: "Privacidad y Familia",
+        items: [
+            { id: "Auditor de privacidad en Android", label: "Auditor de privacidad (Android)" },
+            { id: "Protección antirrobo para Android", label: "Antirrobo y localización (Móvil)" },
+            { id: "Localización remota del dispositivo iOS", label: null },
+            { id: "Control Parental", label: "Control Parental" },
+            { id: "Protege y gestiona todas tus contraseñas", label: "Gestor de Contraseñas" },
+            { id: "Crea carpetas cifradas y protegidas", label: "Cifrado de archivos" }
+        ]
+    }, {
+        nombre: "Rendimiento y Utilidades",
+        items: [
+            { id: "Modo juego / multimedia", label: "Modo Juego / Multimedia" },
+            { id: "Mejora el rendimiento y duración de la batería en Android", label: "Mejora de rendimiento (Android)" },
+            { id: "Kit de rescate para PCs", label: "Kit de Rescate (PC)" },
+            { id: "Optimización del rendimiento y limpieza del PC", label: "Optimización y limpieza (PC)" },
+            { id: "Eliminación segura de archivos", label: "Eliminación segura de archivos (PC)" }
+        ]
+    }];
 
     let headerHTML = '';
     let bodyHTML = '';
-
     productosSeleccionados.forEach(producto => {
         const precioFormateado = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(producto.precio);
-        headerHTML += `<div class="col text-center"><h4 class="fw-bold">${producto.nombre}</h4><p class="h2 fw-bold">${precioFormateado}</p><p class="text-muted small">${producto.subtitulo}</p><button class="btn btn-primary w-100" data-product-id="${producto.id}">Agregar al Carrito</button></div>`;
+        headerHTML += `
+            <div class="col text-center">
+                <h4 class="fw-bold">${producto.nombre}</h4>
+                <p class="h2 fw-bold">${precioFormateado}</p>
+                <p class="text-muted small">${producto.subtitulo}</p>
+                <button class="btn btn-primary w-100" data-product-id="${producto.id}">Agregar al Carrito</button>
+            </div>
+        `;
     });
 
     gruposDeCaracteristicas.forEach(grupo => {
-        bodyHTML += `<div class="row border-bottom"><div class="col-md-6 py-2 bg-light fw-bold">${grupo.nombre}</div><div class="col"></div><div class="col"></div><div class="col"></div></div>`;
+        bodyHTML += `
+            <div class="row border-bottom">
+                <div class="col-md-6 py-2 bg-light fw-bold">${grupo.nombre}</div>
+                <div class="col"></div><div class="col"></div><div class="col"></div>
+            </div>
+        `;
         grupo.items.filter(item => item.label !== null).forEach(item => {
-            let featureRow = `<div class="row border-bottom py-2 align-items-center"><div class="col-md-6">${item.label}</div>`;
+            let featureRow = `
+                <div class="row border-bottom py-2 align-items-center">
+                    <div class="col-md-6">${item.label}</div>
+            `;
             productosSeleccionados.forEach(producto => {
-                const tieneCaracteristica = producto.caracteristicas.includes(item.id) || (item.label === "Antirrobo y localización (Móvil)" && (producto.caracteristicas.includes("Protección antirrobo para Android") || producto.caracteristicas.includes("Localización remota del dispositivo iOS")));
-                featureRow += `<div class="col text-center">${tieneCaracteristica ? '<i class="bi bi-check-lg text-success h4"></i>' : '<i class="bi bi-dash-lg text-muted h4"></i>'}</div>`;
+                const tiene = producto.caracteristicas.includes(item.id) || (item.label === "Antirrobo y localización (Móvil)" && (producto.caracteristicas.includes("Protección antirrobo para Android") || producto.caracteristicas.includes("Localización remota del dispositivo iOS")));
+                featureRow += `
+                    <div class="col text-center">${tiene ? '<i class="bi bi-check-lg text-success h4"></i>' : '<i class="bi bi-dash-lg text-muted h4"></i>'}</div>
+                `;
             });
             featureRow += `</div>`;
             bodyHTML += featureRow;
         });
     });
 
-    resultadosContainer.innerHTML = 
-    `<div class="card shadow-sm">
-        <div class="card-header border-0 bg-white">
-            <div class="row align-items-center py-3">
-                <div class="col-md-6">
-                    <h3 class="mb-0">Comparación de Planes</h3>
-                    <a href="#" class="small" data-bs-toggle="modal" data-bs-target="#tech-specs-modal">
-                    <i class="bi bi-card-checklist me-1"></i>Requisitos Técnicos
-                    </a>
-                </div>${headerHTML}
+    resultadosContainer.innerHTML = `
+        <div class="card shadow-sm">
+            <div class="card-header border-0 bg-white">
+                <div class="row align-items-center py-3">
+                    <div class="col-md-6">
+                        <h3 class="mb-0">Comparación de Planes</h3>
+                        <a href="#" class="small link-brand" data-bs-toggle="modal" data-bs-target="#tech-specs-modal">Requisitos Técnicos</a>
+                    </div>
+                    ${headerHTML}
+                </div>
             </div>
+            <div class="card-body">${bodyHTML}</div>
         </div>
-        <div class="card-body">${bodyHTML}</div>
-    </div>`;
+    `;
     resultadosContainer.style.visibility = 'visible';
     resultadosContainer.style.opacity = '1';
 }
 
-// --- FUNCIÓN SIMPLIFICADA ---
-// Ahora usa la constante importada, haciendo el código más limpio.
 function inicializarModalRequisitos() {
     const techSpecsModal = document.getElementById('tech-specs-modal');
     if (techSpecsModal) {
         const modalBody = techSpecsModal.querySelector('.modal-body');
         modalBody.innerHTML = `
             <p class="small text-muted">Los siguientes requisitos son válidos para todos los planes de Panda Dome.</p>
-            <h6><i class="bi bi-windows me-2"></i>Windows</h6><p class="small text-muted">${requisitosUniversales.windows}</p>
-            <h6><i class="bi bi-android2 me-2"></i>Android</h6><p class="small text-muted">${requisitosUniversales.android}</p>
-            <h6><i class="bi bi-apple me-2"></i>Mac</h6><p class="small text-muted">${requisitosUniversales.mac}</p>
-            <h6><i class="bi bi-phone me-2"></i>iOS</h6><p class="small text-muted">${requisitosUniversales.ios}</p>`;
+            <h6><i class="bi bi-windows me-2"></i>Windows</h6>
+            <p class="small text-muted">${requisitosUniversales.windows}</p>
+            <h6><i class="bi bi-android2 me-2"></i>Android</h6>
+            <p class="small text-muted">${requisitosUniversales.android}</p>
+            <h6><i class="bi bi-apple me-2"></i>Mac</h6>
+            <p class="small text-muted">${requisitosUniversales.mac}</p>
+            <h6><i class="bi bi-phone me-2"></i>iOS</h6>
+            <p class="small text-muted">${requisitosUniversales.ios}</p>
+        `;
     }
 }

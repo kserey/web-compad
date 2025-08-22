@@ -322,14 +322,14 @@ footer {
 }
 
 /* Estilos de enlaces SÓLO para la página de productos */
-#page-productos a {
+#page-productos a:not(.btn) {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-#page-productos a:hover {
+#page-productos a:not(.btn):hover {
   color: var(--accent-color);
   text-decoration: underline;
 }
