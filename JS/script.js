@@ -63,7 +63,7 @@ function renderPartnerHTML(partner) {
 }
 
 function setupPartnersCarousel() {
-  const itemsPerSlide = window.innerWidth < 768 ? 2 : 4;
+  const itemsPerSlide = window.innerWidth < 768 ? 2 : 3;
   crearCarrusel({
     data: partnersData,
     carouselId: 'partnersCarousel',

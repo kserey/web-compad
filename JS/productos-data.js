@@ -22,21 +22,21 @@ export const catalogo = {
             tituloLargo: "Protege Tu Mundo Digital",
             parrafo: "La protección antivirus esencial que te permite navegar, comprar y realizar transacciones online con total seguridad. Proporciona un robusto antivirus en tiempo real para Windows, Mac y Android, un firewall para bloquear intrusos y protección para tu red Wi-Fi, asegurando que tus datos estén siempre a salvo.",
             imagen: "IMG/productos/panda-essential.png",
-            pdf: "Fichas-Tecnicas/Panda-Dome-Essential-Hojas-de-Producto-ES (1).pdf",
+            pdf: "Fichas-Tecnicas/Panda-Dome-Essential.pdf",
             compatibilidad: "Compatible con Windows, Mac, Android e iOS."
           },
           advanced: {
             tituloLargo: "Protege tu dinero, tu familia y tu identidad",
             parrafo: "Una solución de seguridad avanzada que añade capas de protección cruciales para tu familia y tu identidad. Además de un antivirus de primer nivel, incluye control parental para supervisar la actividad online de tus hijos y una robusta defensa contra ataques de ransomware, asegurando que tus archivos más valiosos nunca sean secuestrados.",
             imagen: "IMG/productos/panda-advanced.png",
-            pdf: "Fichas-Tecnicas/Panda-Dome-Advanced-Hojas-de-Producto-ES (1).pdf",
+            pdf: "Fichas-Tecnicas/Panda-Dome-Advanced.pdf",
             compatibilidad: "Compatible con Windows, Mac, Android e iOS."
           },
           complete: {
             tituloLargo: "Mantén a salvo tu privacidad y optimiza tus dispositivos",
             parrafo: "La suite de seguridad definitiva que protege tu privacidad y optimiza el rendimiento de tus dispositivos. Incluye un gestor de contraseñas para resguardar tus credenciales, herramientas de limpieza para que tu PC siempre funcione como nuevo y la capacidad de cifrar tus archivos más confidenciales para una tranquilidad total.",
             imagen: "IMG/productos/panda-complete.png",
-            pdf: "Fichas-Tecnicas/Panda-Dome-Complete-Hojas-de-Producto-ES (1).pdf",
+            pdf: "Fichas-Tecnicas/Panda-Dome-Complete.pdf",
             compatibilidad: "Compatible con Windows, Mac, Android e iOS."
           }
         },

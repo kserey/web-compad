@@ -29,7 +29,8 @@ export const partnersData = [
   { nombre: "HPE", logo: "IMG/partners/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
   { nombre: "Recycla", logo: "IMG/partners/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
   { nombre: "WatchGuard", logo: "IMG/partners/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
-  { nombre: "Panda", logo: "IMG/partners/partner-panda.png", alt: "Panda", url: "https://www.pandasecurity.com/" }
+  { nombre: "Panda", logo: "IMG/partners/partner-panda.png", alt: "Panda", url: "https://www.pandasecurity.com/" },
+  { nombre: "Mercado Público", logo: "IMG/partners/partner-mercadopublico.png", alt: "Mercado Público", url: "https://www.mercadopublico.cl/" }
 ];
 
 export const servicesData = [
