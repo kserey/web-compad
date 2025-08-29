@@ -209,12 +209,12 @@ function renderizarConfirmacion(ordenID, cliente, carrito, total) {
                         <ol class="list-group list-group-numbered">
                             <li class="list-group-item">Realiza la transferencia bancaria por el monto total a la siguiente cuenta:
                                 <ul class="list-unstyled mt-2 small bg-light p-2 rounded">
-                                    <li><strong>Banco:</strong> [Nombre del Banco]</li>
-                                    <li><strong>Tipo de Cuenta:</strong> [Cuenta Corriente / Vista]</li>
-                                    <li><strong>Número:</strong> [Número de Cuenta]</li>
-                                    <li><strong>Nombre:</strong> [Razón Social de Compad]</li>
-                                    <li><strong>RUT:</strong> [RUT de la Empresa]</li>
-                                    <li><strong>Email:</strong> [Email para notificar transferencia]</li>
+                                    <li><strong>Banco:</strong> Bice</li>
+                                    <li><strong>Tipo de Cuenta:</strong> Corriente</li>
+                                    <li><strong>Número:</strong> 02031450</li>
+                                    <li><strong>Razón Social:</strong> COMPAD SPA</li>
+                                    <li><strong>RUT:</strong> 76.422.085-4</li>
+                                    <li><strong>Email:</strong> ventas@compad-it.cl</li>
                                 </ul>
                             </li>
                             <li class="list-group-item">Envía el comprobante a <strong>ventas@compad-it.cl</strong> indicando tu número de orden <strong>(${ordenID})</strong> en el asunto.</li>
