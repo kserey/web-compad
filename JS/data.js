@@ -201,7 +201,7 @@ export const servicesData = [
   },
   {
     id: 'venta',
-    titulo: 'Venta de Productos',
+    titulo: 'Venta de Productos y Licencias',
     subtitulo: 'Equipamiento y hardware de marcas líderes.',
     contenido: {
       tituloPanel: 'Venta e Integración de Hardware IT',
@@ -226,6 +226,11 @@ export const servicesData = [
           icono: 'bi-hdd-network-fill', 
           titulo: 'Conectividad y Componentes', 
           texto: 'Switches SAN de alto rendimiento, unidades de disco y periféricos.'
+        },
+        {
+          icono: 'bi-file-earmark-text-fill',
+          titulo: 'Licencias de Software',
+          texto: 'Licencias de software antivirus, firewall, EDR y otras soluciones de seguridad, respaldo y gestión de datos.'
         }
       ]
     }
