@@ -40,35 +40,44 @@ function generarProductosCompletos(datosMarca) {
     const productosFinales = [];
     const planes = ['essential', 'advanced', 'complete'];
     const opciones = [
-        { d: 1, a: 1, p: 0 }, { d: 1, a: 2, p: 1 }, { d: 1, a: 3, p: 2 },
-        { d: 3, a: 1, p: 3 }, { d: 3, a: 2, p: 4 }, { d: 3, a: 3, p: 5 },
-        { d: 5, a: 1, p: 6 }, { d: 5, a: 2, p: 7 }, { d: 5, a: 3, p: 8 },
-        { d: 10, a: 1, p: 9 }, { d: 10, a: 2, p: 10 }, { d: 10, a: 3, p: 11 },
-        { d: 25, a: 1, p: 12 }, { d: 25, a: 2, p: 13 }, { d: 25, a: 3, p: 14 }
+        // 1 año
+        { d: 1, a: 1, p: 0 }, { d: 3, a: 1, p: 1 }, { d: 5, a: 1, p: 2 },
+        { d: 10, a: 1, p: 3 }, { d: 25, a: 1, p: 4 },
+        // 2 años
+        { d: 1, a: 2, p: 5 }, { d: 3, a: 2, p: 6 }, { d: 5, a: 2, p: 7 },
+        { d: 10, a: 2, p: 8 }, { d: 25, a: 2, p: 9 },
+        // 3 años
+        { d: 1, a: 3, p: 10 }, { d: 3, a: 3, p: 11 }, { d: 5, a: 3, p: 12 },
+        { d: 10, a: 3, p: 13 }, { d: 25, a: 3, p: 14 }
     ];
+
     const caracteristicasFull = {
         essential: datosMarca.caracteristicas.essential,
         advanced: [...datosMarca.caracteristicas.essential, ...datosMarca.caracteristicas.advanced],
         complete: [...datosMarca.caracteristicas.essential, ...datosMarca.caracteristicas.advanced, ...datosMarca.caracteristicas.complete]
     };
+
     planes.forEach(plan => {
         const nombreCompleto = `Panda Dome ${plan.charAt(0).toUpperCase() + plan.slice(1)}`;
         opciones.forEach(opt => {
-            let subtitulo;
+            let subtituloDispositivos = `${opt.d} ${opt.d > 1 ? 'Dispositivos' : 'Dispositivo'}`;
             if (opt.d === 25) {
-                subtitulo = `Hasta ${opt.d} usuarios / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`;
-            } else {
-                subtitulo = `${opt.d} ${opt.d > 1 ? 'Dispositivos' : 'Dispositivo'} / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`;
+                subtituloDispositivos = 'Hasta 25 usuarios';
             }
+
             productosFinales.push({
-                nombre: nombreCompleto, ...datosMarca.descripciones[plan],
+                nombre: nombreCompleto,
+                ...datosMarca.descripciones[plan],
                 caracteristicas: caracteristicasFull[plan],
                 id: `${datosMarca.nombreMarca.toLowerCase().replace(' ', '')}-${plan}-${opt.d}d-${opt.a}a`,
-                subtitulo: subtitulo,
-                dispositivos: opt.d, años: opt.a, precio: datosMarca.precios[plan][opt.p],
+                subtitulo: `${subtituloDispositivos} / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`,
+                dispositivos: opt.d,
+                años: opt.a,
+                precio: datosMarca.precios[plan][opt.p],
             });
         });
     });
+
     return productosFinales;
 }
 
