@@ -46,9 +46,9 @@ export const catalogo = {
           complete: ["Protege y gestiona todas tus contraseñas", "Crea carpetas cifradas y protegidas", "Eliminación segura de archivos", "Optimización del rendimiento y limpieza del PC"]
         },
         precios: {
-          essential: [15990, 25990, 34990, 21990, 35990, 48990, 26990, 43990, 59990, 39990, 64990, 88990],
-          advanced: [24990, 40990, 55990, 33990, 54990, 74990, 41990, 67990, 92990, 60990, 98990, 134990],
-          complete: [35990, 58990, 79990, 48990, 78990, 107990, 60990, 97990, 133990, 87990, 141990, 193990]
+            essential: [11366, 20116, 22759, 30634, 43234, 18034, 31421, 38666, 52684, 68434, 25358, 46267, 52345, 73521, 99438],
+            advanced: [17938, 27913, 33784, 39533, 60559, 30634, 47801, 57409, 67174, 96469, 43234, 67489, 81034, 97571, 134663],
+            complete: [23538, 39288, 52675, 56306, 76309, 39296, 64496, 85838, 103163, 122850, 63788, 85050, 118046, 135056, 181125]
         }
       },
       // En el futuro, podrías agregar "bitdefender": { ... } aquí

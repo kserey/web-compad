@@ -44,6 +44,7 @@ function generarProductosCompletos(datosMarca) {
         { d: 3, a: 1, p: 3 }, { d: 3, a: 2, p: 4 }, { d: 3, a: 3, p: 5 },
         { d: 5, a: 1, p: 6 }, { d: 5, a: 2, p: 7 }, { d: 5, a: 3, p: 8 },
         { d: 10, a: 1, p: 9 }, { d: 10, a: 2, p: 10 }, { d: 10, a: 3, p: 11 },
+        { d: 25, a: 1, p: 12 }, { d: 25, a: 2, p: 13 }, { d: 25, a: 3, p: 14 }
     ];
     const caracteristicasFull = {
         essential: datosMarca.caracteristicas.essential,
@@ -53,11 +54,17 @@ function generarProductosCompletos(datosMarca) {
     planes.forEach(plan => {
         const nombreCompleto = `Panda Dome ${plan.charAt(0).toUpperCase() + plan.slice(1)}`;
         opciones.forEach(opt => {
+            let subtitulo;
+            if (opt.d === 25) {
+                subtitulo = `Hasta ${opt.d} usuarios / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`;
+            } else {
+                subtitulo = `${opt.d} ${opt.d > 1 ? 'Dispositivos' : 'Dispositivo'} / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`;
+            }
             productosFinales.push({
                 nombre: nombreCompleto, ...datosMarca.descripciones[plan],
                 caracteristicas: caracteristicasFull[plan],
                 id: `${datosMarca.nombreMarca.toLowerCase().replace(' ', '')}-${plan}-${opt.d}d-${opt.a}a`,
-                subtitulo: `${opt.d} ${opt.d > 1 ? 'Dispositivos' : 'Dispositivo'} / ${opt.a} ${opt.a > 1 ? 'Años' : 'Año'}`,
+                subtitulo: subtitulo,
                 dispositivos: opt.d, años: opt.a, precio: datosMarca.precios[plan][opt.p],
             });
         });
