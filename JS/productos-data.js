@@ -45,11 +45,11 @@ export const catalogo = {
           advanced: ["Kit de rescate para PCs", "Evita el phishing y los sitios fraudulentos", "Firewall personal avanzado", "Capa de protección adicional frente a ransomware", "Control Parental"],
           complete: ["Protege y gestiona todas tus contraseñas", "Crea carpetas cifradas y protegidas", "Eliminación segura de archivos", "Optimización del rendimiento y limpieza del PC"]
         },
-        precios: {
-            essential: [11500, 20500, 23000, 31000, 43500, 18000, 31500, 39000, 53000, 68500, 25500, 46500, 52500, 74000, 99500],
-            advanced: [18000, 28000, 34000, 39500, 61000, 31000, 48000, 57500, 67500, 96500, 43500, 67500, 81000, 98000, 135000],
-            complete: [23500, 39500, 53000, 56500, 76500, 39500, 64500, 86000, 103500, 123000, 64000, 85000, 118500, 135000, 181500]
-        }
+      precios: {
+          essential: [11500, 20500, 23000, 31000, 43500, 18000, 31500, 39000, 53000, 68500, 25500, 46500, 52500, 74000, 99500],
+          advanced: [18000, 28000, 34000, 39500, 61000, 31000, 48000, 57500, 67500, 96500, 43500, 67500, 81000, 98000, 135000],
+          complete: [23500, 39500, 53000, 56500, 76500, 39500, 64500, 86000, 103500, 123000, 64000, 85000, 118500, 135000, 181500]
+      }
       },
       // En el futuro, podrías agregar "bitdefender": { ... } aquí
     }
