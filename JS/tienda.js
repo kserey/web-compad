@@ -230,10 +230,10 @@ function renderizarConfirmacion(ordenID, cliente, carrito, total) {
                                     <li><strong>Número:</strong> 02031450</li>
                                     <li><strong>Razón Social:</strong> COMPAD SPA</li>
                                     <li><strong>RUT:</strong> 76.422.085-4</li>
-                                    <li><strong>Email:</strong> ventas@compad-it.cl</li>
+                                    <li><strong>Email:</strong> ventas@compad.cl</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">Envía el comprobante a <strong>ventas@compad-it.cl</strong> indicando tu número de orden <strong>(${ordenID})</strong> en el asunto.</li>
+                            <li class="list-group-item">Envía el comprobante a <strong>ventas@compad.cl</strong> indicando tu número de orden <strong>(${ordenID})</strong> en el asunto.</li>
                             <li class="list-group-item">Una vez confirmado el pago (usualmente en menos de 24 horas hábiles), te enviaremos la licencia digital a tu correo: <strong>${cliente.email}</strong>.</li>
                         </ol>
                     </div>

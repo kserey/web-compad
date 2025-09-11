@@ -127,7 +127,7 @@ async function enviarNotificacion(ordenID, cliente, total) {
     autoresponseMsg += `   - Nombre: [Razón Social de Compad]\n`;
     autoresponseMsg += `   - RUT: [RUT de la Empresa]\n`;
     autoresponseMsg += `   - Email: [Email para notificar transferencia]\n\n`;
-    autoresponseMsg += `2. Envía el comprobante a ventas@compad-it.cl, indicando tu número de orden (${ordenID}) en el asunto.\n\n`;
+    autoresponseMsg += `2. Envía el comprobante a ventas@compad.cl, indicando tu número de orden (${ordenID}) en el asunto.\n\n`;
     autoresponseMsg += `Una vez confirmado el pago, te enviaremos la licencia digital a este mismo correo.\n\n`;
     autoresponseMsg += `¡Gracias por preferirnos!\nEl equipo de Compad`;
     notificationForm.querySelector('#form-autoresponse').value = autoresponseMsg;
