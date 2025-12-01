@@ -25,12 +25,71 @@ export const casesData = [
 ];
 
 export const partnersData = [
-  { nombre: "PureStorage", logo: "IMG/partners/partner-pure.png", alt: "PureStorage", url: "https://www.purestorage.com/es/" },
-  { nombre: "HPE", logo: "IMG/partners/partner-hp.png", alt: "HPE", url: "https://www.hpe.com/lamerica/es/home.html" },
-  { nombre: "Recycla", logo: "IMG/partners/partner-recycla.png", alt: "Recycla", url: "https://www.recycla.cl/" },
-  { nombre: "WatchGuard", logo: "IMG/partners/partner-watchguard.png", alt: "WatchGuard", url: "https://www.watchguard.com/" },
-  { nombre: "Panda", logo: "IMG/partners/partner-panda.png", alt: "Panda", url: "https://www.pandasecurity.com/" },
-  { nombre: "Mercado Público", logo: "IMG/partners/partner-mercadopublico.png", alt: "Mercado Público", url: "https://www.mercadopublico.cl/" }
+  { 
+    nombre: "Microsoft Solution Provider", 
+    logo: "IMG/partners/partner-microsoft-sp.png", 
+    alt: "Microsoft Solution Provider", 
+    url: "https://www.microsoft.com/es-cl" 
+  },
+  { 
+    nombre: "Microsoft CSP", 
+    logo: "IMG/partners/partner-microsoft-csp.png", 
+    alt: "Microsoft CSP", url: "https://www.microsoft.com/es-cl" 
+  },
+  { 
+    nombre: "Mercado Público", 
+    logo: "IMG/partners/partner-mercadopublico.png", 
+    alt: "Mercado Público", 
+    url: "https://www.mercadopublico.cl/" 
+  },
+  { 
+    nombre: "PureStorage", 
+    logo: "IMG/partners/partner-pure.png", 
+    alt: "PureStorage", 
+    url: "https://www.purestorage.com/es/" 
+  },
+  { 
+    nombre: "HPE", 
+    logo: "IMG/partners/partner-hp.png", 
+    alt: "HPE", 
+    url: "https://www.hpe.com/lamerica/es/home.html" 
+  },
+  { 
+    nombre: "Adistec", 
+    logo: "IMG/partners/partner-adistec.png", 
+    alt: "Adistec", 
+    url: "https://www.adistec.com/cl" 
+  },
+  { 
+    nombre: "Intcomex", 
+    logo: "IMG/partners/partner-intcomex.png", 
+    alt: "Intcomex", 
+    url: "https://www.intcomex.com/" 
+  },
+  { 
+    nombre: "Licencias On Line", 
+    logo: "IMG/partners/partner-lol.png", 
+    alt: "Licencias on Line", 
+    url: "https://www.licenciasonline.com/cl/es/inicio" 
+  },
+  {
+    nombre: "WatchGuard", 
+    logo: "IMG/partners/partner-watchguard.png", 
+    alt: "WatchGuard", 
+    url: "https://www.watchguard.com/" 
+  },
+  { 
+    nombre: "Panda", 
+    logo: "IMG/partners/partner-panda.png", 
+    alt: "Panda", 
+    url: "https://www.pandasecurity.com/" 
+  },
+  { 
+    nombre: "Recycla", 
+    logo: "IMG/partners/partner-recycla.png", 
+    alt: "Recycla", 
+    url: "https://www.recycla.cl/" 
+  }
 ];
 
 export const servicesData = [
