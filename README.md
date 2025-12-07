@@ -39,7 +39,7 @@ El objetivo principal fue migrar de una estructura anticuada a una plataforma we
 
 El proyecto está organizado de la siguiente manera para una fácil navegación y mantenimiento:
 
-.
+```text
 ├── CSS/
 │   └── style.css               # Estilos globales y variables CSS
 ├── IMG/
@@ -57,7 +57,7 @@ El proyecto está organizado de la siguiente manera para una fácil navegación 
 ├── index.html                  # Landing page corporativa
 ├── productos.html              # Plantilla base para la tienda
 └── README.md
-
+```
 ## 🚀 Puesta en Marcha
 
 Al ser un proyecto de frontend puro, no requiere instalación compleja, pero sí respetar la estructura de módulos.
