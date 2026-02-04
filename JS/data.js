@@ -231,7 +231,7 @@ export const servicesData = [
         descripcion: 
         {
             inicio: 'Garantizamos la eliminación de datos confidenciales en discos y cintas, ',
-            enfasis: 'con certificación notarial y cumplimiento de la norma PCI',
+            enfasis: 'con certificación notarial',
             final: ', para tu completa tranquilidad y seguridad en cada etapa del proceso.'
         },
         imagenProceso: 
