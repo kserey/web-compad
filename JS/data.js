@@ -288,7 +288,7 @@ export const servicesData = [
         },
         {
           icono: 'bi-file-earmark-text-fill',
-          titulo: '<a href="https://compad.cl/productos">Licencias de Software</a>',
+          titulo: 'Licencias de Software',
           texto: 'Licencias de software antivirus, firewall, EDR y otras soluciones de seguridad, respaldo y gestión de datos.'
         }
       ]
