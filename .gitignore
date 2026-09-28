@@ -1,0 +1,38 @@
+# Dependencias (resuelve el error de permisos en Netlify)
+node_modules/
+/.pnp
+.pnp.js
+
+# Salida de compilación de Astro
+dist/
+
+# Caché interna de Astro y Vite
+.astro/
+.cache/
+
+# Entorno y variables secretas
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+
+# Logs del sistema y gestores de paquetes
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos del sistema operativo y sincronización
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos de configuración de IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
