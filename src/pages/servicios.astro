@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Servicios IT, Gestión de Infraestructura & Transformación Digital | Compad"
+  description="Administración de infraestructura crítica, almacenamiento SAN/NAS, soporte de ingeniería senior, digitalización de Estados de Pago (EDP) y Kommo CRM en Chile."
+>
+  <Navbar isHome={false} />
+
+  <!-- Hero Servicios -->
+  <header class="hero d-flex align-items-center" style="min-height: 60vh; padding-top: 100px;">
+    <div class="container text-center text-white py-5">
+      <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-semibold mb-3 shadow-sm">
+        <i class="bi bi-hdd-rack-fill text-accent me-1"></i> Capacidades Corporativas
+      </span>
+      <h1 class="display-4 fw-bold">Infraestructura Crítica, Operaciones IT y Transformación Digital</h1>
+      <p class="fs-5 mx-auto text-light" style="max-width: 860px;">
+        Más de una década administrando plataformas de alta disponibilidad para la gran empresa, modernizando procesos operacionales y garantizando resiliencia técnica en Chile.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <a href="#infraestructura" class="btn btn-primary btn-lg px-4">Gestión de Infraestructura</a>
+        <a href="#transformacion" class="btn btn-outline-light btn-lg px-4">Transformación Digital</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="catalogo-servicios" class="py-5">
+    <div class="container">
+
+      <!-- ========================================== -->
+      <!-- PILAR 1: GESTIÓN DE INFRAESTRUCTURA & CLOUD -->
+      <!-- ========================================== -->
+      <section id="infraestructura" class="py-5 border-bottom">
+        <div class="mb-4">
+          <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Línea Principal & Operaciones Críticas</span>
+          <h2 class="fw-bold display-6">Gestión de Infraestructura Crítica, Storage & Soporte Senior</h2>
+          <p class="text-muted" style="max-width: 800px;">
+            Aseguramos la continuidad operativa, el rendimiento y la escalabilidad de tus plataformas de TI mediante contratos de gestión continua e ingeniería especializada.
+          </p>
+        </div>
+
+        <div class="row align-items-stretch g-4 mb-4">
+          <!-- Tarjeta de Capacidades de Ingeniería -->
+          <div class="col-lg-7">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+              <h4 class="fw-bold mb-3 text-dark">Alcance de Gestión y Soporte Continuo</h4>
+              <p class="text-muted">
+                Administramos entornos híbridos y locales de alta demanda técnica, integrando monitoreo proactivo, tuning de rendimiento y estricto apego a normativas corporativas.
+              </p>
+              <div class="row g-3 mt-2">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-hdd-stack-fill fs-3 text-accent me-3"></i>
+                    <div>
+                      <strong class="d-block text-dark">Storage Masivo SAN & NAS</strong>
+                      <span class="text-muted small">Administración, zonificación de fibra óptica, aprovisionamiento de volumen y reportabilidad de capacidad.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-layers-half fs-3 text-accent me-3"></i>
+                    <div>
+                      <strong class="d-block text-dark">Virtualización y Servidores</strong>
+                      <span class="text-muted small">Soporte e ingeniería avanzada en VMware vSphere, clusters Linux Enterprise y Windows Server.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-activity fs-3 text-accent me-3"></i>
+                    <div>
+                      <strong class="d-block text-dark">Monitoreo y Continuidad</strong>
+                      <span class="text-muted small">Detección anticipada de cuellos de botella, gestión de incidencias críticas y mantenimiento de CMDB.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-kanban-fill fs-3 text-accent me-3"></i>
+                    <div>
+                      <strong class="d-block text-dark">Gestión de Proyectos IT</strong>
+                      <span class="text-muted small">Migraciones de datos sin impacto al usuario, consolidación de centros de datos y actualización tecnológica.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta Casos de Contrato Directo -->
+          <div class="col-lg-5">
+            <div class="p-4 p-md-5 bg-light rounded-4 shadow-sm h-100 border-start border-4 border-accent d-flex flex-column justify-content-between">
+              <div>
+                <span class="badge bg-white text-dark border px-3 py-1 rounded-pill mb-3">Experiencia Comprobada</span>
+                <h4 class="fw-bold mb-3">Respaldo en Operaciones Críticas</h4>
+                <p class="text-muted small mb-4">
+                  Nuestra capacidad técnica está validada en operaciones de gran escala que no admiten caídas de servicio:
+                </p>
+                <div class="mb-3 pb-3 border-bottom">
+                  <strong class="d-block text-dark mb-1"><i class="bi bi-building me-2 text-accent"></i>Banco BCI</strong>
+                  <p class="small text-muted mb-0">Soporte técnico avanzado, monitoreo inteligente de la arquitectura SAN y optimización constante de almacenamiento crítico.</p>
+                </div>
+                <div class="mb-3">
+                  <strong class="d-block text-dark mb-1"><i class="bi bi-cart3 me-2 text-accent"></i>Walmart Chile</strong>
+                  <p class="small text-muted mb-0">Ingeniería senior para plataformas virtuales, diagnóstico estratégico y administración continua de servidores.</p>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-2 pt-3">
+                <span class="badge bg-white text-dark border">Storage SAN/NAS</span>
+                <span class="badge bg-white text-dark border">VMware</span>
+                <span class="badge bg-white text-dark border">Linux</span>
+                <span class="badge bg-white text-dark border">Windows Server</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila Complementaria: Hardware e Integración Oficial -->
+        <div class="p-4 bg-light rounded-4 border">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-8">
+              <h5 class="fw-bold mb-1"><i class="bi bi-box-seam text-accent me-2"></i>Suministro, Dimensionamiento e Integración de Hardware</h5>
+              <p class="text-muted small mb-0">
+                Acompañamos a las áreas de TI en el dimensionamiento exacto de cómputo, almacenamiento flash (PureStorage, HPE), switches de fibra y unidades de respaldo (NBU), con disponibilidad en el catálogo oficial de <strong>Mercado Público</strong>.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <span class="badge bg-white text-dark border p-2 me-1">Mercado Público</span>
+              <span class="badge bg-white text-dark border p-2 me-1">PureStorage</span>
+              <span class="badge bg-white text-dark border p-2">HPE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- PILAR 2: TRANSFORMACIÓN DIGITAL -->
+      <!-- ========================================== -->
+      <section id="transformacion" class="py-5 border-bottom">
+        <div class="mb-4">
+          <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Modernización Operativa & Comercial</span>
+          <h2 class="fw-bold display-6">Transformación Digital & Automatización de Procesos</h2>
+          <p class="text-muted" style="max-width: 820px;">
+            Optimizamos flujos de trabajo críticos reemplazando procesos manuales por plataformas centralizadas, trazables y conectadas con tus operaciones.
+          </p>
+        </div>
+
+        <!-- Módulo A: Estados de Pago (EDP) -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white mb-4">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 order-lg-2">
+              <span class="badge bg-light text-dark border px-3 py-1 rounded-pill mb-2">Operaciones & Finanzas</span>
+              <h3 class="fw-bold mb-3">Plataforma de Digitalización de Estados de Pago (EDP)</h3>
+              <p class="text-muted">
+                Reemplazamos planillas de cálculo y cadenas infinitas de correos electrónicos por un entorno unificado donde contratistas, inspectores técnicos (ITO) y finanzas gestionan estados de pago con trazabilidad absoluta.
+              </p>
+              <div class="alert alert-light border shadow-sm p-3 mb-3 rounded-3">
+                <strong class="text-accent d-block mb-1"><i class="bi bi-lightning-charge-fill me-1"></i>Eficiencia Operacional:</strong>
+                <span class="text-muted small">Disminuye los tiempos de ciclo y aprobación de pagos hasta en un <strong>40%</strong>, suprimiendo desvíos o documentos extraviados.</span>
+              </div>
+              <ul class="list-unstyled small text-muted mb-0">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i><strong>Trazabilidad integral:</strong> Registro histórico auditable de cada revisión y firma digital.</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i><strong>Integración con ERPs:</strong> Conexión con SAP, Oracle u otros sistemas contables.</li>
+                <li><i class="bi bi-check-circle-fill text-accent me-2"></i><strong>Control en línea:</strong> Reportes consolidados del estado financiero de cada contrato.</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+                <img src="/IMG/servicios/edp-dashboard.png" alt="Dashboard Plataforma Estados de Pago" class="img-fluid">
+                <div class="p-2 bg-light text-center small text-muted border-top">
+                  Vista ejecutiva: seguimiento en vivo de contratos y estados de avance.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Módulo B: Kommo CRM Partner -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-light text-dark border px-3 py-1 rounded-pill">Comercial & Ventas</span>
+                <span class="badge bg-dark text-white px-3 py-1 rounded-pill">Partner Regional Oficial</span>
+              </div>
+              <h3 class="fw-bold mb-3">Automatización Comercial y Mensajería con Kommo CRM</h3>
+              <p class="text-muted">
+                Como partner oficial regional, implementamos y adaptamos Kommo para conectar WhatsApp Business, Instagram, Facebook y correos en un único embudo conversacional, asegurando atención continua y seguimiento automatizado de prospectos.
+              </p>
+              <div class="row g-3 my-2">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-whatsapp fs-4 text-accent me-2"></i>
+                    <div>
+                      <strong class="small d-block text-dark">Bandeja Unificada</strong>
+                      <span class="text-muted small">Centralización de chats de ventas y soporte sin pérdida de leads.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-robot fs-4 text-accent me-2"></i>
+                    <div>
+                      <strong class="small d-block text-dark">Flujos Automatizados</strong>
+                      <span class="text-muted small">Chatbots de precalificación y asignación automática 24/7.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a 
+                  href="mailto:contacto@compad.cl?subject=Implementacion%20Kommo%20CRM%20-%20Compad" 
+                  class="btn btn-primary px-4"
+                >
+                  <i class="bi bi-send me-1"></i> Solicitar Implementación
+                </a>
+                <a 
+                  href="https://www.kommo.com/es/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn btn-outline-secondary px-4"
+                >
+                  Conocer más en Kommo <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 text-center">
+              <div class="p-4 bg-light rounded-4 border">
+                <a 
+                  href="https://www.kommo.com/es/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="d-inline-block text-decoration-none mb-3"
+                  title="Sitio Oficial Kommo"
+                >
+                  <img 
+                    src="/IMG/partners/partner-kommo.png" 
+                    alt="Kommo CRM Partner Oficial" 
+                    class="img-fluid" 
+                    style="max-height: 85px; width: auto; object-fit: contain; transition: transform 0.2s ease;"
+                    onmouseover="this.style.transform='scale(1.05)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  >
+                </a>
+                <h6 class="fw-bold mb-1">Partner Acreditado</h6>
+                <p class="text-muted small mb-3">
+                  Configuración a medida, flujos automatizados para WhatsApp y capacitación para tu equipo en Chile.
+                </p>
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-white border rounded-pill small text-muted shadow-sm">
+                  <i class="bi bi-patch-check-fill text-success"></i> Regional Partner Oficial
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- PILAR 3: DESTRUCCIÓN SEGURA DE MEDIOS -->
+      <!-- ========================================== -->
+      <section id="destruccion" class="py-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Seguridad Física de Datos & Compliance</span>
+            <h2 class="fw-bold display-6 mb-3">Destrucción Segura y Certificada de Medios</h2>
+            <p class="text-muted">
+              Garantizamos la baja definitiva e irrecuperable de información confidencial contenida en discos magnéticos, cintas y dispositivos de almacenamiento, en estricto cumplimiento normativo.
+            </p>
+            <div class="row g-3 mt-1">
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-magnet-fill fs-4 text-accent me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block text-dark">Borrado Lógico Definitivo (Degaussing)</strong>
+                    <span class="text-muted small">Exposición a campos electromagnéticos intensos que disuelven la estructura magnética de los datos.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-recycle fs-4 text-accent me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block text-dark">Destrucción Mecánica & Reciclaje Técnico</strong>
+                    <span class="text-muted small">Perforación, deformación y disposición en plantas de valorización autorizadas.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-patch-check-fill fs-4 text-accent me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block text-dark">Acta Notarial de Certificación</strong>
+                    <span class="text-muted small">Entrega de acta formal notariada con el detalle correlativo de cada serie destruida para fines de auditoría.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-light">
+              <img src="/IMG/servicios/degauss.png" alt="Proceso de Degaussing y Destrucción" class="img-fluid mx-auto mb-3" style="max-height: 260px; object-fit: contain;">
+              <span class="small text-muted">Procedimiento auditado y validado por clientes industriales como Occidental Chemical Chile.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- CTA Contacto Servicios (Sin teléfonos ni oficinas físicas) -->
+  <section id="contacto-servicios" class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <div class="p-4 p-md-5 bg-white shadow-sm rounded-4 text-center">
+            <div class="icon-circle shadow-sm mb-3 mx-auto">
+              <i class="bi bi-chat-left-dots-fill fs-3"></i>
+            </div>
+            <h3 class="fw-bold mb-2">¿Requieres soporte para tu infraestructura o evaluar un proyecto?</h3>
+            <p class="text-muted mb-4">
+              Conversemos sobre tus desafíos operativos y tecnológicos. Un consultor senior revisará tus requerimientos para orientarte.
+            </p>
+            <a 
+              href="mailto:contacto@compad.cl?subject=Consulta%20de%20Servicios%20IT" 
+              class="btn btn-primary btn-lg px-4 py-2"
+            >
+              <i class="bi bi-send me-2"></i>Escríbenos a contacto@compad.cl
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

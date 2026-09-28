@@ -1,0 +1,462 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Compad - Soluciones IT, Ciberseguridad & Transformación Digital"
+  description="En Compad transformamos la tecnología en una ventaja competitiva. Servicios de ciberseguridad, consultoría IT, plataformas de almacenamiento y transformación digital en Chile."
+>
+  <Navbar isHome={true} />
+
+  <!-- Hero Principal -->
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="container text-center text-white py-5">
+      <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-semibold mb-3 shadow-sm">
+        <i class="bi bi-shield-check text-accent me-1"></i> Ingeniería IT & Ciberseguridad Defensiva | Chile
+      </span>
+      <h1 class="display-4 fw-bold mx-auto" style="max-width: 900px;">
+        Garantizamos la Continuidad, Seguridad y Escalabilidad de tu Infraestructura Crítica
+      </h1>
+      <p class="fs-5 mx-auto text-light mt-3" style="max-width: 820px;">
+        Más de una década administrando plataformas de alta disponibilidad, protegiendo entornos frente a incidentes y modernizando operaciones para grandes empresas en Chile.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <a href="#services" class="btn btn-primary btn-lg px-4">Explorar Servicios IT</a>
+        <a href="mailto:contacto@compad.cl?subject=Consulta%20General%20-%20Compad" class="btn btn-outline-light btn-lg px-4">Hablar con un Especialista</a>
+      </div>
+
+      <!-- Micro-KPIs / Credenciales Rápidas -->
+      <div class="d-flex flex-wrap justify-content-center gap-4 mt-5 pt-3 border-top border-secondary border-opacity-50 small text-light">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-check-circle-fill text-accent"></i>
+          <span><strong>+10 Años</strong> de Trayectoria</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-building-check text-accent"></i>
+          <span>Operaciones Críticas en <strong>Banca & Retail</strong></span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-sliders text-accent"></i>
+          <span>Arquitectura y Soluciones <strong>a Medida</strong></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nosotros: Pilares de Valor Técnico -->
+  <section id="about-us" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Compromiso Operacional</span>
+        <h2 class="fw-bold">Nuestra Experiencia es tu Ventaja Técnica</h2>
+        <p class="text-muted small mx-auto" style="max-width: 700px;">
+          Entregamos valor real mediante soporte de alta especialización, cumplimiento normativo exigible y soluciones adaptadas exactamente a la realidad de tu negocio.
+        </p>
+      </div>
+
+      <div class="row g-4 text-start">
+        <!-- Pilar 1: Ingeniería Senior -->
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 h-100 bg-light rounded-4 border shadow-sm d-flex flex-column">
+            <div class="icon-circle shadow-sm mb-3">
+              <i class="bi bi-terminal-split fs-3 text-accent"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Ingeniería Senior Directa</h5>
+            <p class="text-muted small mb-0 flex-grow-1">
+              Trato directo con especialistas en plataformas críticas de almacenamiento SAN, virtualización VMware y sistemas de alta criticidad. Eliminamos capas burocráticas para diagnosticar y ejecutar con precisión técnica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 2: Ciberseguridad Pragmática -->
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 h-100 bg-light rounded-4 border shadow-sm d-flex flex-column">
+            <div class="icon-circle shadow-sm mb-3">
+              <i class="bi bi-shield-shaded fs-3 text-accent"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Ciberseguridad y Cumplimiento</h5>
+            <p class="text-muted small mb-0 flex-grow-1">
+              Enfoque defensivo Blue Team diseñado para resguardar la operación continua y dar cumplimiento formal a las exigencias de la Ley Marco de Ciberseguridad (21.663) y de Protección de Datos Personales (21.719).
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Soluciones a Medida -->
+        <div class="col-md-4">
+          <div class="p-4 p-lg-5 h-100 bg-light rounded-4 border shadow-sm d-flex flex-column">
+            <div class="icon-circle shadow-sm mb-3">
+              <i class="bi bi-bullseye fs-3 text-accent"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Arquitectura y Soluciones a Medida</h5>
+            <p class="text-muted small mb-0 flex-grow-1">
+              Diseñamos y dimensionamos cada proyecto según los requerimientos técnicos, escala operacional y objetivos estratégicos de tu organización, asegurando adaptabilidad y acompañamiento a nivel nacional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vitrina de Soluciones y Servicios -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Nuestras Capacidades</span>
+        <h2 class="fw-bold display-6">Soluciones para Cada Etapa de tu Negocio</h2>
+        <p class="text-muted lead fs-6 mx-auto" style="max-width: 750px;">
+          Integramos consultoría estratégica, protección avanzada de la información y digitalización operativa para acompañar el crecimiento sostenible de tu organización.
+        </p>
+      </div>
+
+      <!-- NUESTRAS CAPACIDADES -->
+      <div class="row g-4 align-items-stretch">
+        <!-- Tarjeta Protagónica 1: Ciberseguridad Integral -->
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow-sm p-4 p-md-5 rounded-4 bg-light border-start border-4 border-accent d-flex flex-column">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon-circle shadow-sm me-3">
+                <i class="bi bi-shield-check fs-2"></i>
+              </div>
+              <div>
+                <span class="badge bg-dark text-white mb-1">Área Clave & Cumplimiento</span>
+                <h4 class="fw-bold mb-0">Ciberseguridad Integral</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              Evaluamos brechas, blindamos tus entornos y apoyamos el cumplimiento estricto de la <strong>Ley Marco de Ciberseguridad (Ley 21.663)</strong> y la <strong>Ley de Datos Personales (Ley 21.719)</strong> con enfoque Blue Team.
+            </p>
+            <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Assessment técnico y Hoja de Ruta priorizada
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Ethical Hacking, Pentesting y simulación de Phishing
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Protección de Endpoints (EDR/XDR) y Redes NGFW
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Protección de Datos (DLP) y Respaldo Inmutable
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <a href="/ciberseguridad" class="btn btn-primary px-4 py-2">
+                Ver Portafolio de Ciberseguridad <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Protagónica 2: Gestión de Infraestructura & Transformación -->
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow-sm p-4 p-md-5 rounded-4 bg-light d-flex flex-column">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon-circle shadow-sm me-3">
+                <i class="bi bi-hdd-rack-fill fs-2"></i>
+              </div>
+              <div>
+                <span class="badge bg-secondary text-white mb-1">Continuidad Operacional & Cloud</span>
+                <h4 class="fw-bold mb-0">Gestión de Infraestructura & Transformación</h4>
+              </div>
+            </div>
+            <p class="text-muted">
+              Más de 10 años administrando plataformas críticas de alta disponibilidad y modernizando procesos operacionales para grandes empresas en Chile.
+            </p>
+            <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Administración de Storage SAN/NAS y soporte senior (BCI, Walmart)
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Digitalización de Estados de Pago (EDP, reducción de ciclo 40%)
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Automatización comercial con WhatsApp (Kommo Partner Oficial)
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                Destrucción segura de medios con certificación notarial
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <a href="/servicios" class="btn btn-outline-primary px-4 py-2">
+                Explorar Infraestructura y Servicios <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Éxito: Experiencia Comprobada -->
+  <section id="cases" class="py-5 bg-light border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Trayectoria & Resultados</span>
+        <h2 class="fw-bold">Casos de Éxito en Misión Crítica</h2>
+        <p class="text-muted small mx-auto" style="max-width: 680px;">
+          Garantizamos resiliencia técnica, continuidad operativa y cumplimiento riguroso en organizaciones de alta exigencia operacional en Chile.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Caso 1: Walmart Chile -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
+            <div class="position-relative" style="height: 180px; overflow: hidden;">
+              <img 
+                src="/IMG/casos/caso-walmart.jpeg" 
+                class="w-100 h-100 object-fit-cover" 
+                alt="Caso Walmart Chile - Entornos Virtuales"
+              >
+              <span class="position-absolute top-0 end-0 m-3 badge bg-white text-dark border shadow-sm">
+                Retail & E-commerce
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-dark mb-1">Walmart Chile</h5>
+              <p class="text-accent small fw-semibold mb-3">Continuidad en Plataformas Virtuales y Cómputo</p>
+              
+              <p class="text-muted small mb-3">
+                <strong>Desafío:</strong> Mantener la estabilidad de cientos de servidores y entornos virtuales que soportan operaciones logísticas y comerciales continuas.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Soporte especializado L2/L3 en VMware vSphere, Linux Enterprise y Windows Server.
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Monitoreo proactivo y diagnóstico anticipado de fallas para evitar detenciones de servicio.
+                </li>
+              </ul>
+
+              <div class="pt-3 border-top d-flex flex-wrap gap-1">
+                <span class="badge bg-light text-dark border">VMware</span>
+                <span class="badge bg-light text-dark border">Linux Enterprise</span>
+                <span class="badge bg-light text-dark border">Misión Crítica</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caso 2: Banco BCI -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
+            <div class="position-relative" style="height: 180px; overflow: hidden;">
+              <img 
+                src="/IMG/casos/caso-bci.jpg" 
+                class="w-100 h-100 object-fit-cover" 
+                alt="Caso Banco BCI - Arquitectura Storage SAN"
+              >
+              <span class="position-absolute top-0 end-0 m-3 badge bg-white text-dark border shadow-sm">
+                Banca & Finanzas
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-dark mb-1">Banco BCI</h5>
+              <p class="text-accent small fw-semibold mb-3">Monitoreo Inteligente de Redes de Storage (SAN)</p>
+              
+              <p class="text-muted small mb-3">
+                <strong>Desafío:</strong> Optimizar la arquitectura de almacenamiento masivo y garantizar disponibilidad 24/7 en transacciones financieras de alto volumen.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Análisis profundo de capacidad, zonificación de fibra y tuning de latencia en switches SAN.
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Reportabilidad técnica periódica y recomendaciones estratégicas de escalabilidad.
+                </li>
+              </ul>
+
+              <div class="pt-3 border-top d-flex flex-wrap gap-1">
+                <span class="badge bg-light text-dark border">Storage SAN/NAS</span>
+                <span class="badge bg-light text-dark border">Brocade / Fibra</span>
+                <span class="badge bg-light text-dark border">Alta Disponibilidad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caso 3: Occidental Chemical Chile -->
+        <div class="col-lg-4 col-md-12">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
+            <div class="position-relative" style="height: 180px; overflow: hidden;">
+              <img 
+                src="/IMG/casos/caso-oxy.jpg" 
+                class="w-100 h-100 object-fit-cover" 
+                alt="Caso Occidental Chemical - Destrucción Certificada de Datos"
+              >
+              <span class="position-absolute top-0 end-0 m-3 badge bg-white text-dark border shadow-sm">
+                Química & Manufactura
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-dark mb-1">Occidental Chemical Chile</h5>
+              <p class="text-accent small fw-semibold mb-3">Baja Segura y Destrucción Notariada de Medios</p>
+              
+              <p class="text-muted small mb-3">
+                <strong>Desafío:</strong> Desmantelar y eliminar discos magnéticos y cintas de respaldo obsoletas garantizando que los datos confidenciales sean 100% irrecuperables.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Desmagnetización lógica (degaussing de alta potencia) y trituración mecánica de platos.
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle text-accent me-2"></i>Entrega de acta formal firmada ante notario con detalle de series unitarias procesadas.
+                </li>
+              </ul>
+
+              <div class="pt-3 border-top d-flex flex-wrap gap-1">
+                <span class="badge bg-light text-dark border">Degaussing</span>
+                <span class="badge bg-light text-dark border">Acta Notarial</span>
+                <span class="badge bg-light text-dark border">ISO / Compliance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners & Ecosistema Tecnológico -->
+  <section id="partners" class="py-5 bg-white border-top border-bottom overflow-hidden">
+    <div class="container text-center mb-4">
+      <span class="badge bg-dark text-white px-3 py-2 rounded-pill mb-2">Ecosistema & Alianzas</span>
+      <h2 class="fw-bold">Tecnología Global Respaldada por Marcas Líderes</h2>
+      <p class="text-muted small mx-auto" style="max-width: 650px;">
+        Integramos soluciones corporativas de seguridad, infraestructura de almacenamiento y automatización comercial con los principales fabricantes del sector.
+      </p>
+    </div>
+
+    <!-- Nivel 1: Fabricantes y Marcas Principales -->
+    <div class="marquee-wrapper mb-4">
+      <div class="marquee-group">
+        <div class="marquee-item"><img src="/IMG/partners/partner-sophos.png" alt="Sophos"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-fortinet.png" alt="Fortinet"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-watchguard.png" alt="WatchGuard"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-kaspersky.png" alt="Kaspersky"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-forcepoint.png" alt="Forcepoint"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-rapid7.png" alt="Rapid7"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-qualys.png" alt="Qualys"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-safetica.png" alt="Safetica"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-arcserve.png" alt="Arcserve"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-cohesity.png" alt="Cohesity"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-pure.png" alt="PureStorage"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-hp.png" alt="HPE"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-microsoft-sp.png" alt="Microsoft Solution Provider"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-kommo.png" alt="Kommo CRM"></div>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <div class="marquee-item"><img src="/IMG/partners/partner-sophos.png" alt="Sophos"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-fortinet.png" alt="Fortinet"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-watchguard.png" alt="WatchGuard"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-kaspersky.png" alt="Kaspersky"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-forcepoint.png" alt="Forcepoint"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-rapid7.png" alt="Rapid7"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-qualys.png" alt="Qualys"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-safetica.png" alt="Safetica"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-arcserve.png" alt="Arcserve"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-cohesity.png" alt="Cohesity"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-pure.png" alt="PureStorage"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-hp.png" alt="HPE"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-microsoft-sp.png" alt="Microsoft Solution Provider"></div>
+        <div class="marquee-item"><img src="/IMG/partners/partner-kommo.png" alt="Kommo CRM"></div>
+      </div>
+    </div>
+
+    <!-- Nivel 2: Red de Mayoristas y Compras Públicas -->
+    <div class="container text-center mt-3 pt-3 border-top">
+      <p class="text-uppercase fw-semibold text-muted tracking-wider" style="font-size: 0.75rem; letter-spacing: 0.08em;">
+        Canales Oficiales de Suministro, Distribución Mayorista y Convenios
+      </p>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-group marquee-group-reverse">
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-mercadopublico.png" alt="Mercado Público"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-tecnoglobal.png" alt="Tecnoglobal"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-distecna.png" alt="Distecna"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-adistec.png" alt="Adistec"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-lol.png" alt="Licencias On Line"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-dacas.png" alt="Dacas"></div>
+      </div>
+      <div class="marquee-group marquee-group-reverse" aria-hidden="true">
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-mercadopublico.png" alt="Mercado Público"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-tecnoglobal.png" alt="Tecnoglobal"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-distecna.png" alt="Distecna"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-adistec.png" alt="Adistec"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-lol.png" alt="Licencias On Line"></div>
+        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-dacas.png" alt="Dacas"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto Directo -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Hablemos de tu Proyecto</h2>
+        <p class="text-muted">Estamos listos para asesorarte y potenciar la infraestructura tecnológica de tu empresa.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <div class="p-4 p-md-5 bg-white shadow-sm rounded-4 text-center">
+            
+            <!-- Canal Principal: Email -->
+            <div class="mb-4">
+              <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light p-3 mb-3 text-accent fs-3">
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-2">Canal Directo</h4>
+              <p class="text-muted mb-3">Escríbenos directamente para cotizaciones, soporte o dudas técnicas:</p>
+              <a href="mailto:contacto@compad.cl?subject=Consulta%20desde%20sitio%20web" class="btn btn-primary btn-lg px-4 py-2 mb-2">
+                <i class="bi bi-send me-2"></i>Escríbenos a contacto@compad.cl
+              </a>
+            </div>
+
+            <hr class="my-4 text-muted opacity-25">
+
+            <!-- Canales de Respaldo y Confianza -->
+            <div class="row g-4 text-start pt-2">
+              <!-- Ubicación -->
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-geo-alt-fill fs-4 text-accent me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block text-dark">Casa Matriz</strong>
+                    <span class="text-muted small">Apoquindo 2930, Piso 2, Las Condes.<br>Región Metropolitana, Chile</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-linkedin fs-4 text-accent me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block text-dark">LinkedIn</strong>
+                    <a href="https://www.linkedin.com/company/compad-it/" target="_blank" rel="noopener noreferrer" class="text-muted small text-decoration-none d-inline-block">
+                      Conoce nuestras novedades y actividad en Compad IT <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  </Layout>

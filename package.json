@@ -1,0 +1,27 @@
+{
+  "name": "web-compad",
+  "version": "1.0.0",
+  "description": "Este repositorio contiene el código fuente del sitio web corporativo y la plataforma de ventas de Compad IT, una empresa de soluciones tecnológicas. El proyecto combina una presentación corporativa moderna (Single Page) con un módulo de e-commerce funcional para la cotización y venta de licencias de software y soluciones de ciberseguridad.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kserey/web-compad.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kserey/web-compad/issues"
+  },
+  "homepage": "https://github.com/kserey/web-compad#readme",
+  "dependencies": {
+    "astro": "^7.3.5"
+  }
+}
