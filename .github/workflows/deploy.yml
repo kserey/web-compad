@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [feature/mejoras-web]
+    branches: [main, feature/mejoras-web]
   workflow_dispatch:
 
 permissions:
