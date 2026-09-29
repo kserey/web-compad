@@ -8,6 +8,9 @@ const {
   title = "Compad - Soluciones IT & Ciberseguridad", 
   description = "En Compad transformamos la tecnología en una ventaja competitiva. Servicios de ciberseguridad, consultoría IT, plataformas y transformación digital en Chile." 
 } = Astro.props;
+
+// Normaliza el base path dinámico: '' en Netlify y '/web-compad' en GitHub Pages
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!DOCTYPE html>
@@ -17,14 +20,14 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="icon" type="image/png" href="/IMG/logos/compad2.png" />
+  <link rel="icon" type="image/png" href={`${base}/IMG/logos/compad2.png`} />
 
   <!-- Bootstrap CSS & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/CSS/style.css" />
+  <link rel="stylesheet" href={`${base}/CSS/style.css`} />
 </head>
 <body>
   <slot />

@@ -4,15 +4,16 @@ interface Props {
 }
 
 const { isHome = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-// Si estamos en el home usamos anclas directas (#section), si estamos en otra página usamos /#section
-const getHref = (hash: string) => isHome ? hash : `/${hash}`;
+// Si estamos en el home usamos anclas (#section), si estamos en otra página usamos base/#section
+const getHref = (hash: string) => isHome ? hash : `${base}/${hash}`;
 ---
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand" href={getHref("#home")}>
-      <img src="/IMG/logos/compad.png" alt="Compad" height="40" />
+      <img src={`${base}/IMG/logos/compad.png`} alt="Compad" height="40" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,7 @@ const getHref = (hash: string) => isHome ? hash : `/${hash}`;
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href={getHref("#about-us")}>Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="/ciberseguridad">Ciberseguridad</a></li>
+        <li class="nav-item"><a class="nav-link" href={`${base}/ciberseguridad`}>Ciberseguridad</a></li>
         <li class="nav-item"><a class="nav-link" href={getHref("#services")}>Servicios</a></li>
         <li class="nav-item"><a class="nav-link" href={getHref("#cases")}>Casos</a></li>
         <li class="nav-item"><a class="nav-link" href={getHref("#partners")}>Partners</a></li>
