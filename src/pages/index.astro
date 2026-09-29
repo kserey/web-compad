@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout 
@@ -103,7 +105,7 @@ import Footer from '../components/Footer.astro';
   <section id="services" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="badge bg-dark text-white px-3 py-2 rounded-pill fw-semibold mb-2">Nuestras Capacidades</span>
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Nuestras Capacidades</span>
         <h2 class="fw-bold display-6">Soluciones para Cada Etapa de tu Negocio</h2>
         <p class="text-muted lead fs-6 mx-auto" style="max-width: 750px;">
           Integramos consultoría estratégica, protección avanzada de la información y digitalización operativa para acompañar el crecimiento sostenible de tu organización.
@@ -150,7 +152,7 @@ import Footer from '../components/Footer.astro';
               </li>
             </ul>
             <div class="mt-auto">
-              <a href="/ciberseguridad" class="btn btn-primary px-4 py-2">
+              <a href={`${base}/ciberseguridad`} class="btn btn-primary px-4 py-2">
                 Ver Portafolio de Ciberseguridad <i class="bi bi-arrow-right ms-1"></i>
               </a>
             </div>
@@ -191,7 +193,7 @@ import Footer from '../components/Footer.astro';
               </li>
             </ul>
             <div class="mt-auto">
-              <a href="/servicios" class="btn btn-outline-primary px-4 py-2">
+              <a href={`${base}/servicios`} class="btn btn-outline-primary px-4 py-2">
                 Explorar Infraestructura y Servicios <i class="bi bi-arrow-right ms-1"></i>
               </a>
             </div>
@@ -218,7 +220,7 @@ import Footer from '../components/Footer.astro';
           <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
             <div class="position-relative" style="height: 180px; overflow: hidden;">
               <img 
-                src="/IMG/casos/caso-walmart.jpeg" 
+                src={`${base}/IMG/casos/caso-walmart.jpeg`} 
                 class="w-100 h-100 object-fit-cover" 
                 alt="Caso Walmart Chile - Entornos Virtuales"
               >
@@ -256,7 +258,7 @@ import Footer from '../components/Footer.astro';
           <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
             <div class="position-relative" style="height: 180px; overflow: hidden;">
               <img 
-                src="/IMG/casos/caso-bci.jpg" 
+                src={`${base}/IMG/casos/caso-bci.jpg`} 
                 class="w-100 h-100 object-fit-cover" 
                 alt="Caso Banco BCI - Arquitectura Storage SAN"
               >
@@ -294,7 +296,7 @@ import Footer from '../components/Footer.astro';
           <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white d-flex flex-column">
             <div class="position-relative" style="height: 180px; overflow: hidden;">
               <img 
-                src="/IMG/casos/caso-oxy.jpg" 
+                src={`${base}/IMG/casos/caso-oxy.jpg`} 
                 class="w-100 h-100 object-fit-cover" 
                 alt="Caso Occidental Chemical - Destrucción Certificada de Datos"
               >
@@ -343,36 +345,36 @@ import Footer from '../components/Footer.astro';
     <!-- Nivel 1: Fabricantes y Marcas Principales -->
     <div class="marquee-wrapper mb-4">
       <div class="marquee-group">
-        <div class="marquee-item"><img src="/IMG/partners/partner-sophos.png" alt="Sophos"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-fortinet.png" alt="Fortinet"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-watchguard.png" alt="WatchGuard"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-kaspersky.png" alt="Kaspersky"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-forcepoint.png" alt="Forcepoint"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-rapid7.png" alt="Rapid7"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-qualys.png" alt="Qualys"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-safetica.png" alt="Safetica"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-arcserve.png" alt="Arcserve"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-cohesity.png" alt="Cohesity"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-pure.png" alt="PureStorage"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-hp.png" alt="HPE"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-microsoft-sp.png" alt="Microsoft Solution Provider"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-kommo.png" alt="Kommo CRM"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-sophos.png`} alt="Sophos"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-fortinet.png`} alt="Fortinet"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-watchguard.png`} alt="WatchGuard"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-kaspersky.png`} alt="Kaspersky"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-forcepoint.png`} alt="Forcepoint"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-rapid7.png`} alt="Rapid7"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-qualys.png`} alt="Qualys"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-safetica.png`} alt="Safetica"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-arcserve.png`} alt="Arcserve"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-cohesity.png`} alt="Cohesity"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-pure.png`} alt="PureStorage"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-hp.png`} alt="HPE"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-microsoft-sp.png`} alt="Microsoft Solution Provider"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-kommo.png`} alt="Kommo CRM"></div>
       </div>
       <div class="marquee-group" aria-hidden="true">
-        <div class="marquee-item"><img src="/IMG/partners/partner-sophos.png" alt="Sophos"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-fortinet.png" alt="Fortinet"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-watchguard.png" alt="WatchGuard"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-kaspersky.png" alt="Kaspersky"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-forcepoint.png" alt="Forcepoint"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-rapid7.png" alt="Rapid7"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-qualys.png" alt="Qualys"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-safetica.png" alt="Safetica"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-arcserve.png" alt="Arcserve"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-cohesity.png" alt="Cohesity"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-pure.png" alt="PureStorage"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-hp.png" alt="HPE"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-microsoft-sp.png" alt="Microsoft Solution Provider"></div>
-        <div class="marquee-item"><img src="/IMG/partners/partner-kommo.png" alt="Kommo CRM"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-sophos.png`} alt="Sophos"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-fortinet.png`} alt="Fortinet"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-watchguard.png`} alt="WatchGuard"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-kaspersky.png`} alt="Kaspersky"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-forcepoint.png`} alt="Forcepoint"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-rapid7.png`} alt="Rapid7"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-qualys.png`} alt="Qualys"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-safetica.png`} alt="Safetica"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-arcserve.png`} alt="Arcserve"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-cohesity.png`} alt="Cohesity"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-pure.png`} alt="PureStorage"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-hp.png`} alt="HPE"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-microsoft-sp.png`} alt="Microsoft Solution Provider"></div>
+        <div class="marquee-item"><img src={`${base}/IMG/partners/partner-kommo.png`} alt="Kommo CRM"></div>
       </div>
     </div>
 
@@ -384,22 +386,22 @@ import Footer from '../components/Footer.astro';
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-group marquee-group-reverse">
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-mercadopublico.png" alt="Mercado Público"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-tecnoglobal.png" alt="Tecnoglobal"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-distecna.png" alt="Distecna"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-adistec.png" alt="Adistec"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-lol.png" alt="Licencias On Line"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-dacas.png" alt="Dacas"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-intcomex.png" alt="Intcomex"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-mercadopublico.png`} alt="Mercado Público"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-tecnoglobal.png`} alt="Tecnoglobal"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-distecna.png`} alt="Distecna"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-adistec.png`} alt="Adistec"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-lol.png`} alt="Licencias On Line"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-dacas.png`} alt="Dacas"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-intcomex.png`} alt="Intcomex"></div>
       </div>
       <div class="marquee-group marquee-group-reverse" aria-hidden="true">
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-mercadopublico.png" alt="Mercado Público"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-tecnoglobal.png" alt="Tecnoglobal"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-distecna.png" alt="Distecna"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-adistec.png" alt="Adistec"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-lol.png" alt="Licencias On Line"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-dacas.png" alt="Dacas"></div>
-        <div class="marquee-item marquee-item-sm"><img src="/IMG/partners/partner-intcomex.png" alt="Intcomex"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-mercadopublico.png`} alt="Mercado Público"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-tecnoglobal.png`} alt="Tecnoglobal"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-distecna.png`} alt="Distecna"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-adistec.png`} alt="Adistec"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-lol.png`} alt="Licencias On Line"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-dacas.png`} alt="Dacas"></div>
+        <div class="marquee-item marquee-item-sm"><img src={`${base}/IMG/partners/partner-intcomex.png`} alt="Intcomex"></div>
       </div>
     </div>
   </section>
@@ -466,5 +468,4 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <Footer />
-
-  </Layout>
+</Layout>

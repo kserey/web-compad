@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -170,7 +172,7 @@ import Footer from '../components/Footer.astro';
             </div>
             <div class="col-lg-6 order-lg-1">
               <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
-                <img src="/IMG/servicios/edp-dashboard.png" alt="Dashboard Plataforma Estados de Pago" class="img-fluid">
+                <img src={`${base}/IMG/servicios/edp-dashboard.png`} alt="Dashboard Plataforma Estados de Pago" class="img-fluid">
                 <div class="p-2 bg-light text-center small text-muted border-top">
                   Vista ejecutiva: seguimiento en vivo de contratos y estados de avance.
                 </div>
@@ -239,7 +241,7 @@ import Footer from '../components/Footer.astro';
                   title="Sitio Oficial Kommo"
                 >
                   <img 
-                    src="/IMG/partners/partner-kommo.png" 
+                    src={`${base}/IMG/partners/partner-kommo.png`} 
                     alt="Kommo CRM Partner Oficial" 
                     class="img-fluid" 
                     style="max-height: 85px; width: auto; object-fit: contain; transition: transform 0.2s ease;"
@@ -303,7 +305,7 @@ import Footer from '../components/Footer.astro';
           </div>
           <div class="col-lg-6 text-center">
             <div class="card border-0 shadow-sm rounded-4 p-4 bg-light">
-              <img src="/IMG/servicios/degauss.png" alt="Proceso de Degaussing y Destrucción" class="img-fluid mx-auto mb-3" style="max-height: 260px; object-fit: contain;">
+              <img src={`${base}/IMG/servicios/degauss.png`} alt="Proceso de Degaussing y Destrucción" class="img-fluid mx-auto mb-3" style="max-height: 260px; object-fit: contain;">
               <span class="small text-muted">Procedimiento auditado y validado por clientes industriales como Occidental Chemical Chile.</span>
             </div>
           </div>
